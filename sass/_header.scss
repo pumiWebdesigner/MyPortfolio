@@ -1,0 +1,50 @@
+@use "color" as *;
+@use "breakpoints" as *;
+
+.header {
+  background-color: $bg-dark;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.header__container {
+  position: relative;
+  width: 100%;
+}
+.header__logo {
+  //ナビ要素は、他の要素に合わせるためにinline-block
+  display: inline-block;
+  padding: 14px 24px;
+  font-size: 20px;
+  color: $white;
+}
+.header__menu-button {
+  border: none;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 30px;
+  height: 36px;
+  overflow: hidden; // bgs:100%;⇔意図不明
+  color: transparent;
+  background: url(../img/bg_menu.png) center center no-repeat;
+  background-size: 100% auto;
+  &.is-checked {
+    background: url(../img/bg_menu-close.png) center center no-repeat;
+    background-size: 100% auto;
+  }
+}
+.header__contents {
+  height: calc(100vh - 88px);
+  border-top: 1px solid $white;
+  padding-top: 60px;
+  display: none;
+}
+.header__nav-item {
+  & + & {
+    margin-top: 24px;
+  }
+}

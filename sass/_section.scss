@@ -1,0 +1,32 @@
+.section {
+  padding: 48px 0;
+}
+.section__inner {
+  padding: 0 32px;
+}
+.section__head {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+.section__head-main {
+  font-size: 40px;
+  letter-spacing: 0.1em;
+  @include mq(tb) {
+    font-size: 54px;
+  }
+}
+.section__head-sub {
+  font-size: 11px;
+}
+//contact,twitter用に追記
+.section__head--center {
+  text-align: center;
+}
+.section__lead-text {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.section__contents {
+  margin-top: 40px;
+}
