@@ -65,8 +65,9 @@
     height: calc(100vh - 88px);
     top: 88px;
     width: 100%;
-    background-color: map.get($color, black);
-    background: linear-gradient(to bottom, black, gray, blue);
+    background: map.get($color, drawer-bg-sp);
+
+    // background: linear-gradient(to bottom, black, gray, blue);
     right: -100%;
     transition: 0.5s;
     .drawer-open & {

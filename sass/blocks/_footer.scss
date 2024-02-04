@@ -1,4 +1,8 @@
+@use "sass:map";
+@use "../global" as *;
+
 .footer {
+  background: map.get($color, footer-bg);
   text-align: center;
   padding: 10px;
 }

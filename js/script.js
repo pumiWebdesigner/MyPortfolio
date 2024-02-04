@@ -20,6 +20,10 @@
 
     // headerの高さを取得（スクロール先は要素の場所よりheader分下の位置）
     var header = jQuery(".header").innerHeight();
+    if (window.innerWidth <= 767) {
+      header = 0;
+    }
+
     // スクロール先のhrefを取得
     var id = jQuery(this).attr("href");
 
@@ -48,3 +52,23 @@
     jQuery(".header").toggleClass("drawer-open");
   });
 }
+
+// スクロールイベントの監視
+jQuery(window).on("scroll", function () {
+  // .service要素の上端の位置を取得
+  var serviceTop = 300;
+  //  jQuery(".service").offset().top;
+
+  // ウィンドウのスクロール位置を取得
+  var scrollTop = jQuery(window).scrollTop();
+
+  // .service要素が画面内に表示された場合
+  if (scrollTop >= serviceTop) {
+    // headerに.is-scrolledクラスを追加
+    jQuery(".header").addClass("is-scroll");
+  } else {
+    // .service要素が画面外に出た場合
+    // headerから.is-scrolledクラスを削除
+    jQuery(".header").removeClass("is-scroll");
+  }
+});

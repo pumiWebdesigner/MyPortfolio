@@ -5,14 +5,19 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: map.get($layer, header);
+
   width: 100%;
-  z-index: 100;
-  background: map.get($color, black);
+  height: map.get($header, sp-height);
+  background: transparent;
+  transition: 0.5s;
+  &.is-scroll {
+    background: map.get($color, header-bg-sp);
+  }
   @include mq(pc) {
-    background: linear-gradient(to bottom, blue, gray, black);
-    position: relative;
-    flex-basis: 20.8%;
-    padding: 50px 20px;
+    background: map.get($color, header-bg);
+    width: map.get($header, pc-width);
+    height: 100vh;
   }
 }
 
@@ -20,10 +25,12 @@
   position: relative;
   width: 100%;
   @include mq(pc) {
-    width: 160px; // 768px*20.8%
+    // width: 160px; // 768px*20.8%
     margin: 0 auto;
-    position: sticky;
-    top: 50px;
+    padding: 20px;
+
+    // position: sticky;
+    // top: 50px;
   }
 }
 .header__logo {
@@ -42,8 +49,8 @@
 .header__nav {
   @include mq(pc) {
     display: block;
-    position: fixed;
-    z-index: 100;
+    // position: fixed;
+    // z-index: 100;
     padding-top: 40px;
   }
   // spサイズは_drawer.scssのdrawer__navで設定

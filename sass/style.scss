@@ -2,55 +2,118 @@
 @use "./global" as *;
 @use "./blocks" as *;
 
-.wrapper {
-  display: flex;
-  @include mq(sp) {
-    display: block;
-  }
-}
+// .wrapper {
+//   display: flex;
+//   @include mq(sp) {
+//     display: block;
+//   }
+// }
 body {
   font-family: "Oswald", "Noto Sans JP", sans-serif;
-  color: map.get($color, cl-black);
+  color: map.get($color, font);
 }
 .main {
-  flex-basis: 79.2%;
-}
-.fv {
-  position: relative;
-}
-.fv__contents {
-  position: absolute;
-  bottom: 26px;
-  left: 0;
-  width: 100%;
-  height: 209px;
-  background: url(../img/sp/bg_fv-sp.png) center center/contain no-repeat;
-  background-size: 100% auto;
-  padding: 32px;
   @include mq(pc) {
-    background: url(../img/bg_fv.png) center center/contain no-repeat;
-    bottom: 100px;
-    max-width: 627px;
-    height: 174px;
-    padding-top: 24px;
-    padding-left: 96px;
-  }
-  @include mq(tb) {
-    bottom: 50%;
-    transform: translateY(50%);
+    width: calc(100% - map.get($header, pc-width));
+    margin-left: map.get($header, pc-width);
   }
 }
-.fv__heading-main {
-  display: block;
-  font-size: 40px;
-  letter-spacing: 0.1em;
-}
-.fv__heading-sub {
-  margin-top: 12px;
-  display: block;
-  font-size: 14px;
+.bg {
+  background: url("../img/img_fv.jpg") top center/cover no-repeat;
+  position: fixed;
+  z-index: -1;
+  right: 0;
+  width: 100%;
+  // top: map.get($header, sp-height);
+  // height: calc(100vh - map.get($header, sp-height));
+  top: 0;
+  height: 100vh;
+  @include mq(pc) {
+    width: calc(100vw - map.get($header, pc-width));
+  }
 }
 
+.fv {
+  // position: relative;
+  background: transparent;
+  color: white;
+  height: calc(100vh - map.get($header, sp-height));
+  margin-top: map.get($header, sp-height);
+  @include mq(pc) {
+    margin-top: 0;
+    padding-top: 100px;
+    height: 100vh;
+    margin-top: 0;
+  }
+  img {
+    width: 100%;
+    transition: 1s;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    box-shadow: 0 4px 15px 0 rgba(map.get($color, black), 0.15);
+    @include mq(pc) {
+      width: 350px;
+    }
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+// .fv__contents {
+//   position: absolute;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   // bottom: 26px;
+//   left: 0;
+//   width: 100%;
+//   width: 300px;
+//   // height: 209px;
+//   // background: url(../img/sp/bg_fv-sp.png) center center/contain no-repeat;
+//   // background-size: 100% auto;
+//   padding: 32px;
+//   @include mq(pc) {
+//     // background: url(../img/bg_fv.png) center center/contain no-repeat;
+//     // bottom: 100px;
+//     // width: 100%;
+//     // max-width: 627px;
+//     // height: 174px;
+//     // padding-top: 24px;
+//     // padding-left: 96px;
+//   }
+//   @include mq(tb) {
+//     bottom: 50%;
+//     transform: translateY(50%);
+//   }
+// }
+// .fv__heading-main {
+//   display: block;
+//   font-size: 40px;
+//   letter-spacing: 0.1em;
+// }
+// .fv__heading-sub {
+//   margin-top: 12px;
+//   display: block;
+//   font-size: 14px;
+// }
+// .fv__img {
+//   margin-bottom: 12px;
+//   overflow: hidden;
+//   img {
+//     transition: 1s;
+//     aspect-ratio: 3 / 2;
+//     // width: 1200px;
+//     // height: 800px;
+//     object-fit: cover;
+//     box-shadow: 0 4px 15px 0 rgba(map.get($color, black), 0.15);
+//     &:hover {
+//       transform: scale(1.2);
+//     }
+//   }
+// }
+.service {
+  // margin-top: 60vh;
+}
 .service__list {
   @include mq(pc) {
     display: grid;
@@ -81,9 +144,9 @@ body {
   font-size: 14px;
   line-height: 1.6;
 }
-.works {
-  background-color: map.get($color, bg-light);
-}
+// .works {
+//   background-color: map.get($color, bg-light);
+// }
 .works__list {
   @include mq(pc) {
     display: grid;
@@ -107,8 +170,9 @@ body {
   overflow: hidden;
   img {
     transition: 1s;
-    width: 1200px;
-    height: 800px;
+    aspect-ratio: 3 / 2;
+    // width: 1200px;
+    // height: 800px;
     object-fit: cover;
     box-shadow: 0 4px 15px 0 rgba(map.get($color, black), 0.15);
     &:hover {

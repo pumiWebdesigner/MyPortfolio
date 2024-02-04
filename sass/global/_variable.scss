@@ -2,11 +2,31 @@
 $color: (
   white: #fff,
   black: #000,
+  header-bg: linear-gradient(to bottom, #77f, #00f),
+  drawer-bg-sp: linear-gradient(to bottom, blue, gray, black),
+  font: #333,
+  header-bg-sp: blue,
   red: #f00,
-  cl-black: #333,
   bg-dark: #4a4a4a,
   bg-middle: #a98c5f,
   bg-light: #fafafa,
   cl-border: #808080,
   bg-gray-l: #6f6f6f,
+  footer-bg: #fff,
+);
+
+// 階層
+$layer: (
+  totop: 200,
+  modal: 100,
+  drawer: 40,
+  header: 20,
+  footer: 10,
+  default: 1,
+  background: -1,
+);
+
+$header: (
+  pc-width: 200px,
+  sp-height: 88px,
 );
