@@ -12,13 +12,19 @@
   height: map.get($header, sp-height);
   background: transparent;
   transition: 0.5s;
-  .is-scroll & {
-    background: map.get($color, header-bg-sp);
+  @include mq(sp) {
+    .is-scroll & {
+      background: map.get($color, header-bg-sp);
+    }
   }
   @include mq(pc) {
+    position: relative;
+    // display: block;
     background: map.get($color, header-bg);
     width: map.get($header, pc-width);
-    height: 100vh;
+    // bottom: 0;
+    // height: 100vh;
+    height: auto;
     // height: 100%;
   }
 }
@@ -28,9 +34,13 @@
   width: 100%;
   @include mq(pc) {
     // width: 160px; // 768px*20.8%
-    margin: 0 auto;
+    // margin: 0 auto;
     padding: 20px;
-
+    // position: fixed;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: map.get($header, pc-width);
     // position: sticky;
     // top: 50px;
   }

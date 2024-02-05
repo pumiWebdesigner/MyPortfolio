@@ -21,6 +21,9 @@
       // id == "#"の場合、elementDistanceの取得でエラーになるので場合分けする
       var elementDistance = $(id).offset().top; //画面最上部から要素の上端の距離
       var headerHeight = $(".header").outerHeight(); // ヘッダーの高さ（マージン含む）
+      if ($(window).width() >= 1024) {
+        headerHeight = 0; // PCサイズでheaderHeightを0に設定
+      }
       scrollDistance = elementDistance - headerHeight; // ヘッダーの高さを考慮した位置にスクロール
     }
     return scrollDistance;

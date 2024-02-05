@@ -220,15 +220,18 @@ a {
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-.is-scroll .header {
-  background: blue;
+@media screen and (max-width: 1023px) {
+  .is-scroll .header {
+    background: blue;
+  }
 }
 @media screen and (min-width: 1024px) {
   .header {
-    background: -webkit-gradient(linear, left top, left bottom, from(#99f), to(#00f));
-    background: linear-gradient(to bottom, #99f, #00f);
+    position: relative;
+    background: -webkit-gradient(linear, left top, left bottom, from(blue), color-stop(gray), to(black));
+    background: linear-gradient(to bottom, blue, gray, black);
     width: 200px;
-    height: 100vh;
+    height: auto;
   }
 }
 
@@ -238,8 +241,11 @@ a {
 }
 @media screen and (min-width: 1024px) {
   .header__container {
-    margin: 0 auto;
     padding: 20px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 200px;
   }
 }
 
@@ -387,6 +393,17 @@ a {
   opacity: 1;
 }
 
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media screen and (max-width: 1023px) {
+  .wrapper {
+    display: block;
+  }
+}
+
 body {
   font-family: "Oswald", "Noto Sans JP", sans-serif;
   color: #333;
@@ -395,7 +412,6 @@ body {
 @media screen and (min-width: 1024px) {
   .main {
     width: calc(100% - 200px);
-    margin-left: 200px;
   }
 }
 
@@ -457,12 +473,14 @@ body {
 
 @media screen and (min-width: 1024px) {
   .works {
-    width: 400px;
+    width: 50%;
   }
 }
 
-.skill {
-  width: 100%;
+@media screen and (min-width: 1024px) {
+  .skill {
+    width: 50%;
+  }
 }
 
 .works__contents {

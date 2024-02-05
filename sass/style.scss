@@ -2,12 +2,12 @@
 @use "./global" as *;
 @use "./blocks" as *;
 
-// .wrapper {
-//   display: flex;
-//   @include mq(sp) {
-//     display: block;
-//   }
-// }
+.wrapper {
+  display: flex;
+  @include mq(sp) {
+    display: block;
+  }
+}
 body {
   font-family: "Oswald", "Noto Sans JP", sans-serif;
   color: map.get($color, font);
@@ -15,7 +15,7 @@ body {
 .main {
   @include mq(pc) {
     width: calc(100% - map.get($header, pc-width));
-    margin-left: map.get($header, pc-width);
+    // margin-left: map.get($header, pc-width);
   }
 }
 .bg {
@@ -67,17 +67,16 @@ body {
 }
 .works {
   @include mq(pc) {
-    width: 400px;
+    width: 50%;
   }
-  // flex: 0 0 400px;
 }
 .skill {
-  width: 100%;
-  // flex: 1 1 100%;
+  @include mq(pc) {
+    width: 50%;
+  }
 }
 .works__contents {
   width: min(100%, 360px);
-  // height: 360px;
   padding-block: 32px;
 }
 .swiper-pagination {
