@@ -9,11 +9,10 @@
     <title>ポートフォリオサイト</title>
     <!-- 概要descriptionの記載 -->
     <meta name="description" content="WEBデザイナーpumiのポートフォリオサイトです。お客様に寄り添ったホームページ制作が得意です。理想のホームページを一緒に作っていきましょう。" />
-    <!-- GoogleFonts利用の記載 URL:https://fonts.google.com/ -->
+    <!-- GoogleFonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&amp;family=Oswald:wght@400;500&amp;display=swap" rel="stylesheet" />
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&family=Oswald:wght@400;500&display=swap" rel="stylesheet" /> -->
 
     <!-- twitterｶｰﾄﾞ -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -23,25 +22,30 @@
     <meta property="og:description" content="プミのポートフォリオです" />
     <meta property="og:image" content="./img/pumi_icon.svg" />
     <link rel="icon" href="./img/favicon.png" type="image/png" />
-    <!-- ファーストビュー画像は事前に読み込みしておく -->
+    <!-- 事前に読込画像みしておく -->
     <link rel="preload" href="./img/bg_fv.png" as="image" />
     <link rel="preload" href="./img/img_fv.jpg" as="image" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js" defer></script>
     <!-- swiper -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <!-- swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     <script src="./js/slider.js" defer></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script> -->
-    <!-- css読み込みの記載 -->
+    <!-- wow -->
+    <link rel="stylesheet" href="./css/animate.css" />
+    <script src="./dist/wow.min.js"></script>
+    <!-- wow(CDN) -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" /> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script> -->
+    <!-- 通常のcss -->
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <!-- <script src="./js/slider.js" defer></script> -->
+    <!-- JavaScript -->
+    <script src="./js/script.js" defer></script>
   </head>
 
   <body>
-    <!-- <div class="wrapper"> -->
     <header class="header">
       <div class="header__container">
         <h1 class="header__logo">
@@ -68,20 +72,6 @@
                 <span class="button__text">Service -</span>
               </a>
             </li>
-            <!-- works -->
-            <!-- <li class="header__nav-item">
-              <a href="#works" class="header__nav-link js-drawer__nav--link button">
-                <span class="button__icon">
-                  <svg width="21" height="16" viewBox="0 0 21 16" fill="none">
-                    <path
-                      d="M4.2 0.635498C3.04172 0.635498 2.1 1.57078 2.1 2.72115V11.0638H4.2V2.72115H16.8V11.0638H18.9V2.72115C18.9 1.57078 17.9583 0.635498 16.8 0.635498H4.2ZM0.63 12.1066C0.282187 12.1066 0 12.3868 0 12.7323C0 14.114 1.12875 15.2351 2.52 15.2351H18.48C19.8712 15.2351 21 14.114 21 12.7323C21 12.3868 20.7178 12.1066 20.37 12.1066H0.63Z"
-                      class="button__icon-path"
-                    />
-                  </svg>
-                </span>
-                <span class="button__text">Works -</span>
-              </a>
-            </li> -->
             <!-- about -->
             <li class="header__nav-item">
               <a href="#about" class="header__nav-link js-drawer__nav--link button">
@@ -97,7 +87,7 @@
               </a>
             </li>
             <!-- flow -->
-            <!-- <li class="header__nav-item">
+            <li class="header__nav-item">
               <a href="#flow" class="header__nav-link js-drawer__nav--link button">
                 <span class="button__icon">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -113,7 +103,7 @@
                 </span>
                 <span class="button__text">Work flow -</span>
               </a>
-            </li> -->
+            </li>
             <!-- message -->
             <li class="header__nav-item">
               <a href="#message" class="header__nav-link js-drawer__nav--link button">
@@ -159,18 +149,17 @@
             </li>
           </ul>
         </nav>
-        <!-- </div> -->
       </div>
     </header>
     <main class="main">
-      <!-- bg -->
+      <!-- BackGround -->
       <div class="bg"></div>
 
       <!-- FirstView -->
       <div class="fv">
         <div class="fv__container">
           <!-- work -->
-          <section class="section works">
+          <section class="section works wow fadeInUp">
             <div class="section__inner">
               <h2 class="section__head">
                 <span class="section__head-main">Works -</span>
@@ -208,7 +197,7 @@
             </div>
           </section>
           <!-- skill -->
-          <section id="skill" class="section skill">
+          <section id="skill" class="section skill wow fadeInUp">
             <div class="section__inner">
               <h2 class="section__head">
                 <span class="section__head-main">Skill -</span>
@@ -219,7 +208,7 @@
                 <ul class="skill__list">
                   <li class="skill__item">
                     <div class="skill__item-img">
-                      <img src="./img/img_skill1.svg" alt="ホームページ制作" width="86" height="69" loading="lazy" decoding="async" />
+                      <!-- <img src="./img/img_skill1.svg" alt="ホームページ制作" width="86" height="69" loading="lazy" decoding="async" /> -->
                     </div>
                     <h3 class="skill__item-name">ホームページ制作</h3>
                     <p class="skill__item-text">ご要望に応じて柔軟にご提案させていただきます。理想のホームページを一緒に作成していきましょう！</p>
@@ -232,27 +221,28 @@
       </div>
 
       <!-- about -->
-      <section id="about" class="section about">
+      <section id="about" class="section about wow fadeInUp">
         <div class="section__inner">
+          <h2 class="section__head">
+            <span class="section__head-main">About -</span>
+            <span class="section__head-sub">私について</span>
+          </h2>
           <div class="about__container">
             <div class="about__img">
               <img src="./img/pumi.png" alt="プミ画像" width="1000" height="1000" loading="lazy" decoding="async" />
             </div>
             <div class="about__text-contents">
-              <h2 class="section__head">
-                <span class="section__head-main">About -</span>
-                <span class="section__head-sub">私について</span>
-              </h2>
               <p class="about__text">
-                ご満足いただけるサイトを提供できるよう修正については柔軟に対応させていただきます。
-                <br />理想のホームページを一緒に作っていきましょう。
+                HTML / CSS(SASS) / JavaScript(jQuery) を使用したサイト制作が可能です。
+                <br />適切な進捗報告や期限の遵守はもちろんのこと、相談しやすい親身なコミュニケーションを心がけています。
+                <br />ご満足いただけるサイトを提供できるよう修正については柔軟に対応させていただきます。 <br />理想のホームページを一緒に作っていきましょう。
               </p>
             </div>
           </div>
         </div>
       </section>
       <!-- service -->
-      <section id="service" class="section service">
+      <section id="service" class="section service wow fadeInUp">
         <div class="section__inner">
           <h2 class="section__head">
             <span class="section__head-main">Service -</span>
@@ -286,63 +276,8 @@
           </div>
         </div>
       </section>
-      <!-- works -->
-      <!-- <section id="works" class="section works">
-        <div class="section__inner">
-          <h2 class="section__head">
-            <span class="section__head-main">Works -</span>
-            <span class="section__head-sub">実績紹介</span>
-          </h2>
-          <p class="section__lead-text">これまで制作したWebサイトです。また、当サイトも自ら制作していますので実績の一つとして御覧ください。</p>
-          <div class="section__contents">
-            <ul class="works__list">
-              <li class="works__item">
-                <div class="works__item-img">
-                  <img src="./img/onomichi.jpg" alt="尾道キャンペーンのLP" width="1262" height="872" loading="lazy" decoding="async" />
-                </div>
-                <h3 class="works__item-name">ｷｬﾝﾍﾟｰﾝｻｲﾄ(ｻﾝﾌﾟﾙ)</h3>
-                <a class="works__item-link" href="./LP-Onomichi_campaign/index.html" target="_blank">詳しく見る</a>
-              </li>
-              <li class="works__item">
-                <div class="works__item-img">
-                  <img src="./img/tokaniku.jpg" alt="ﾎﾟｰﾄﾌｫﾘｵｻｲﾄ" width="1215" height="632" loading="lazy" decoding="async" />
-                </div>
-                <h3 class="works__item-name">ﾎﾟｰﾄﾌｫﾘｵｻｲﾄ(ｻﾝﾌﾟﾙ)</h3>
-                <a class="works__item-link" href="./tokakuni/index.html" target="_blank">詳しく見る</a>
-              </li>
-              <li class="works__item">
-                <div class="works__item-img">
-                  <img src="./img/sobolon.jpg" alt="ｱｸｾｻﾘｼｮｯﾌﾟのLP" width="1232" height="719" loading="lazy" decoding="async" />
-                </div>
-                <h3 class="works__item-name">ｱｸｾｻﾘｼｮｯﾌﾟ(ｻﾝﾌﾟﾙ)</h3>
-                <a class="works__item-link" href="./soboron/index.html" target="_blank">詳しく見る</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section> -->
-      <!-- about -->
-      <!-- <section id="about" class="section about">
-        <div class="section__inner">
-          <div class="about__container">
-            <div class="about__img">
-              <img src="./img/pumi.png" alt="プミ画像" width="1000" height="1000" loading="lazy" decoding="async" />
-            </div>
-            <div class="about__text-contents">
-              <h2 class="section__head">
-                <span class="section__head-main">About -</span>
-                <span class="section__head-sub">私について</span>
-              </h2>
-              <p class="about__text">
-                ご満足いただけるサイトを提供できるよう修正については柔軟に対応させていただきます。
-                <br />理想のホームページを一緒に作っていきましょう。
-              </p>
-            </div>
-          </div>
-        </div>
-      </section> -->
       <!-- flow -->
-      <!-- <section id="flow" class="section flow">
+      <section id="flow" class="section flow wow fadeInUp">
         <div class="section__inner">
           <h2 class="section__head">
             <span class="section__head-main">Work Flow -</span>
@@ -386,29 +321,10 @@
             </ol>
           </div>
         </div>
-      </section> -->
-      <!-- message -->
-      <section id="message" class="section message">
-        <div class="section__inner">
-          <div class="message__container">
-            <div class="message__text-contents">
-              <h2 class="section__head">
-                <span class="section__head-main">Message -</span>
-                <span class="section__head-sub">ご依頼をお考えの方へ</span>
-              </h2>
-              <p class="message__text">
-                HTML / CSS(SASS) / JavaScript(jQuery) を使用したサイト制作が可能です。<br />
-                適切な進捗報告や期限の遵守はもちろんのこと、相談しやすい親身なコミュニケーションを心がけています。<br />
-              </p>
-            </div>
-            <div class="message__img">
-              <img src="./img/MountFujiSummit.jpg" alt="富士山頂" width="3024" height="4032" loading="lazy" decoding="async" />
-            </div>
-          </div>
-        </div>
       </section>
-      <!-- footer-link -->
-      <div class="page-bottom">
+
+      <!-- contact,twitter -->
+      <div class="page-bottom wow fadeInUp">
         <!-- contact -->
         <div id="contact" class="page-bottom__item page-bottom__item-contact">
           <h2 class="section__head section__head-center">
@@ -468,12 +384,9 @@
         <small class="footer__copy">&copy;Pumi's Portfolio All rights reserved.</small>
       </footer>
     </main>
-    <!-- </div> -->
 
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js" defer></script>
-
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js" defer></script> -->
-    <script src="./js/script.js" defer></script>
+    <script>
+      new WOW().init();
+    </script>
   </body>
 </html>

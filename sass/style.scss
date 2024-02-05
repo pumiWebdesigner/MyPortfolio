@@ -38,9 +38,9 @@ body {
   // color: white;
   // height: calc(100vh - map.get($header, sp-height));
   margin-top: map.get($header, sp-height);
+  padding-top: 100px;
   @include mq(pc) {
     margin-top: 0;
-    padding-top: 100px;
     // height: 100vh;
     margin-top: 0;
   }
@@ -58,12 +58,7 @@ body {
     }
   }
 }
-.about,
-.works,
-.skill {
-  // margin-top: 0;//背景を見せるためのmargin-topだったので、fv上のセクションには不要
-  // background: transparent;
-}
+
 .fv__container {
   @include mq(pc) {
     display: flex;
@@ -71,13 +66,17 @@ body {
   }
 }
 .works {
-  flex: 0 0 400px;
+  @include mq(pc) {
+    width: 400px;
+  }
+  // flex: 0 0 400px;
 }
 .skill {
-  // flex: 0 0 100%;
+  width: 100%;
+  // flex: 1 1 100%;
 }
 .works__contents {
-  width: 360px;
+  width: min(100%, 360px);
   // height: 360px;
   padding-block: 32px;
 }
@@ -146,6 +145,9 @@ body {
   }
 }
 .service__item {
+  padding: 20px;
+  background: white;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
   & + & {
     margin-top: 40px;
     @include mq(pc) {
@@ -171,49 +173,49 @@ body {
 // .works {
 //   background-color: map.get($color, bg-light);
 // }
-.works__list {
-  @include mq(pc) {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8%;
-  }
-}
-.works__item {
-  & + & {
-    margin-top: 40px;
-  }
-  @include mq(pc) {
-    height: 200px;
-    & + & {
-      margin-top: 0;
-    }
-  }
-}
-.works__item-img {
-  margin-bottom: 12px;
-  overflow: hidden;
-  img {
-    transition: 1s;
-    aspect-ratio: 3 / 2;
-    // width: 1200px;
-    // height: 800px;
-    object-fit: cover;
-    box-shadow: 0 4px 15px 0 rgba(map.get($color, black), 0.15);
-    &:hover {
-      transform: scale(1.2);
-    }
-  }
-}
+// .works__list {
+//   @include mq(pc) {
+//     display: grid;
+//     grid-template-columns: repeat(3, 1fr);
+//     gap: 8%;
+//   }
+// }
+// .works__item {
+//   & + & {
+//     margin-top: 40px;
+//   }
+//   @include mq(pc) {
+//     height: 200px;
+//     & + & {
+//       margin-top: 0;
+//     }
+//   }
+// }
+// .works__item-img {
+//   margin-bottom: 12px;
+//   overflow: hidden;
+//   img {
+//     transition: 1s;
+//     aspect-ratio: 3 / 2;
+//     // width: 1200px;
+//     // height: 800px;
+//     object-fit: cover;
+//     box-shadow: 0 4px 15px 0 rgba(map.get($color, black), 0.15);
+//     &:hover {
+//       transform: scale(1.2);
+//     }
+//   }
+// }
 
-.works__item-name {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 6px;
-}
-.works__item-link {
-  font-size: 14px;
-  text-decoration: underline;
-}
+// .works__item-name {
+//   font-size: 16px;
+//   font-weight: bold;
+//   margin-bottom: 6px;
+// }
+// .works__item-link {
+//   font-size: 14px;
+//   text-decoration: underline;
+// }
 
 .about__container {
   @include mq(pc) {
@@ -248,11 +250,11 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
   }
-  @include mq(tb) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px 16px;
-  }
+  // @include mq(tb) {
+  //   display: grid;
+  //   grid-template-columns: repeat(2, 1fr);
+  //   gap: 40px 16px;
+  // }
 }
 .flow__item {
   position: relative;
