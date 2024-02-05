@@ -4,9 +4,11 @@ $pc-size: 1024px;
 
 // ブレイクポイント
 $breakpoints: (
-  "sp": "screen and (max-width: #{$tb-size - 1px})",
+  // "sp": "screen and (max-width: #{$tb-size - 1px})",
+  "sp": "screen and (max-width: #{$pc-size - 1px})",
   "tb": "screen and (min-width: #{$tb-size}) and (max-width: #{$pc-size - 1px})",
-  "pc": "screen and (min-width: #{$tb-size})",
+  // "pc": "screen and (min-width: #{$tb-size})",
+  "pc": "screen and (min-width: #{$pc-size})"
 ) !default;
 
 // mixinメディアクエリ（@use "sass:map";が必要）

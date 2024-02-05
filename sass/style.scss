@@ -35,14 +35,13 @@ body {
 
 .fv {
   // position: relative;
-  background: transparent;
-  color: white;
-  height: calc(100vh - map.get($header, sp-height));
+  // color: white;
+  // height: calc(100vh - map.get($header, sp-height));
   margin-top: map.get($header, sp-height);
   @include mq(pc) {
     margin-top: 0;
     padding-top: 100px;
-    height: 100vh;
+    // height: 100vh;
     margin-top: 0;
   }
   img {
@@ -52,14 +51,39 @@ body {
     object-fit: cover;
     box-shadow: 0 4px 15px 0 rgba(map.get($color, black), 0.15);
     @include mq(pc) {
-      width: 350px;
+      width: 360px;
     }
     &:hover {
       transform: scale(1.2);
     }
   }
 }
-
+.about,
+.works,
+.skill {
+  // margin-top: 0;//背景を見せるためのmargin-topだったので、fv上のセクションには不要
+  // background: transparent;
+}
+.fv__container {
+  @include mq(pc) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.works {
+  flex: 0 0 400px;
+}
+.skill {
+  // flex: 0 0 100%;
+}
+.works__contents {
+  width: 360px;
+  // height: 360px;
+  padding-block: 32px;
+}
+.swiper-pagination {
+  bottom: -5px;
+}
 // .fv__contents {
 //   position: absolute;
 //   top: 50%;

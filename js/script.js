@@ -1,74 +1,52 @@
-// $("#js-button-drawer").on("click", function () {
-
-//   $(this).toggleClass("is-checked");
-
-//   $("#js-drawer").slideToggle();
-
-//   $("body").toggleClass("is-fixed");
-
-// });
-
 {
-  // aタグ制御
-  // ⇒ドロワー関連は専用処理
+  // ページ内の遷移
+  // aタグのクリック（ドロワー関連は専用処理あり）
   jQuery('a[href^="#"]').on("click", function (e) {
-    // ドロワーナビをクリックしたときは、リンク移動後にドロワーを閉じる
-    if (jQuery(this).hasClass("js-drawer__nav--link")) {
-      // リンクへの移動後もドロワーを閉じる処理をしたいので、通常の処理を止める
-      e.preventDefault();
-    }
-
-    // headerの高さを取得（スクロール先は要素の場所よりheader分下の位置）
-    var header = jQuery(".header").innerHeight();
-    if (window.innerWidth <= 767) {
-      header = 0;
-    }
-
-    // スクロール先のhrefを取得
-    var id = jQuery(this).attr("href");
-
-    // スクロールする距離
-    // #は初期値0,#以外は要素の高さ（headerの高さも考慮）
-    var position = 0;
-    if (id != "#") {
-      position = jQuery(id).offset().top - header;
-    }
-    // href設定のリンクへスクロールする
-    jQuery("html,body").animate(
-      {
-        scrollTop: position,
-      },
-      300
-    );
+    e.preventDefault(); // aタグの通常の処理を止める
+    // aタグのhrefが遷移する先
+    var id = jQuery(this).attr("href"); // スクロール先のhrefを取得
+    // 遷移する先とheaderの高さからスクロールする距離を計算
+    scrollDistance = calcDistance(id);
+    // スムーズスクロール
+    smoothScroll(scrollDistance, 300);
     // ドロワーを閉じる
     if (jQuery(this).hasClass("js-drawer__nav--link")) {
-      jQuery(".header").removeClass("drawer-open");
+      jQuery("body").removeClass("drawer-open");
     }
   });
-
-  //ドロワーボタン（ハンバーガーボタン）クリック時
+  // 遷移する先とheaderの高さからスクロールする距離を計算
+  function calcDistance(id) {
+    var scrollDistance = 0; // #は初期値0
+    if (id != "#") {
+      // id == "#"の場合、elementDistanceの取得でエラーになるので場合分けする
+      var elementDistance = $(id).offset().top; //画面最上部から要素の上端の距離
+      var headerHeight = $(".header").outerHeight(); // ヘッダーの高さ（マージン含む）
+      scrollDistance = elementDistance - headerHeight; // ヘッダーの高さを考慮した位置にスクロール
+    }
+    return scrollDistance;
+  }
+  // 距離とスピードを渡してスムーズスクロール
+  function smoothScroll(scrollDistance, speed) {
+    jQuery("html,body").animate(
+      {
+        scrollTop: scrollDistance,
+      },
+      speed
+    );
+  }
+  //ドロワーボタン（ハンバーガーボタン）
   jQuery("#js-drawer__btn").on("click", function (e) {
     e.preventDefault();
-    jQuery(".header").toggleClass("drawer-open");
+    jQuery("body").toggleClass("drawer-open");
+  });
+
+  //スクロール後処理__画面最上部からtargetの場所を超えたら起動
+  jQuery(window).on("scroll", function () {
+    var target = 300;
+    if (jQuery(this).scrollTop() > target) {
+      jQuery("body").addClass("is-scroll");
+    } else {
+      jQuery("body").removeClass("is-scroll");
+    }
   });
 }
-
-// スクロールイベントの監視
-jQuery(window).on("scroll", function () {
-  // .service要素の上端の位置を取得
-  var serviceTop = 300;
-  //  jQuery(".service").offset().top;
-
-  // ウィンドウのスクロール位置を取得
-  var scrollTop = jQuery(window).scrollTop();
-
-  // .service要素が画面内に表示された場合
-  if (scrollTop >= serviceTop) {
-    // headerに.is-scrolledクラスを追加
-    jQuery(".header").addClass("is-scroll");
-  } else {
-    // .service要素が画面外に出た場合
-    // headerから.is-scrolledクラスを削除
-    jQuery(".header").removeClass("is-scroll");
-  }
-});

@@ -10,7 +10,7 @@
   right: 15px;
   width: 40px;
   height: 70px;
-  z-index: 2;
+  z-index: map.get($layer, hamburger);
   display: block;
   transition: 0.5s;
   background-color: transparent;
@@ -60,10 +60,11 @@
   @include mq(sp) {
     display: block;
     position: fixed;
-    z-index: 60;
-    padding-top: 60px;
-    height: calc(100vh - 88px);
-    top: 88px;
+
+    z-index: map.get($layer, drawer);
+    padding-top: 150px;
+    height: 100vh;
+    top: 0;
     width: 100%;
     background: map.get($color, drawer-bg-sp);
 

@@ -3,7 +3,7 @@ const swiper = new Swiper(".swiper", {
   loop: true,
   loopedSlides: 3, //3個目の先に1個目を表示してくれる
   autoplay: {
-    delay: 3000, // 次の画像に切替する時間
+    delay: 30000, // 次の画像に切替する時間
     disableOnInteraction: false, // スライドのドラッグ等の操作時でも自動再生を無効にしない：false
   },
   effect: "fade", // フワッと切替
