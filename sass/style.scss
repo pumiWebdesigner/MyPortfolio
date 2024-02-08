@@ -178,39 +178,58 @@ body {
   // padding-block: 32px;
   margin-top: 30px;
   padding: 20px;
-  .skills__list {
-    display: flex;
-    flex-wrap: wrap;
-    // gap: 20px;
-    justify-content: space-between;
+  // .skills__list {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   justify-content: space-between;
+  // }
+}
+.skills__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px 15px;
+  @media screen and (min-width: 1024px) and (max-width: 1200px) {
+    gap: 15px 10px;
   }
-
-  .skills__item-img {
-    width: 50px;
-    height: 50px;
-    margin-inline: auto;
-  }
-
+  // width: calc(33% - 10px * 2 - 1px);
+  // 実際に格納される.skills__itemは50px+10px+60px=120px
+}
+.skills__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.skills__item--img {
+  width: 50px;
+  height: 50px;
+  // margin-inline: auto;
   img {
-    // aspect-ratio: 3 / 2;
     object-fit: cover;
-    // transition: 1s;
-    &:hover {
-      // transform: scale(1.2);
-    }
   }
+}
 
-  .skills__messages {
-    margin-top: 20px;
-    padding: 20px 10px 20px 30px;
-    background: map.get($color, section-sub);
+.skills__item-name {
+  margin-left: 10px;
+  //一番長い単語に合わせる（一番長い単語は「JavaScript」）
+  width: 60px;
+}
+
+.skills__messages {
+  margin-top: 20px;
+  padding: 20px 10px 20px 30px;
+  // background: map.get($color, section-sub);
+  font-weight: bold;
+  ul {
+    list-style: circle;
+  }
+  li {
+    margin-top: 10px;
     font-weight: bold;
-    ul {
-      list-style: circle;
-    }
-    li {
-      margin-top: 10px;
-      font-weight: bold;
+    @include mq(tb) {
+      @media screen and (max-width: 1200px) {
+        font-size: 12px;
+      }
     }
   }
 }
@@ -379,26 +398,39 @@ body {
 }
 .flow {
   background-color: map.get($color, bg-light);
+  // .section__inner {
+  //   max-width: 100%;
+  // }
 }
 .flow__list {
+  // max-width: calc(880px + 32px * 2);
+  // margin-inline: auto;
   margin-top: 64px;
   @include mq(pc) {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+    gap: 10px;
   }
-  // @include mq(tb) {
-  //   display: grid;
-  //   grid-template-columns: repeat(2, 1fr);
-  //   gap: 40px 16px;
-  // }
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 16px;
+  }
 }
 .flow__item {
   position: relative;
-  // border: 1px solid map.get($color, cl-border);
-  padding: 46px 16px 24px;
+  padding: 46px 12px 24px;
   background: map.get($color, section-sub);
   box-shadow: 0 4px 15px 0 rgba(map.get($color, black), 0.15);
+
+  // @media screen and (max-width: 1200px) {
+  // max-width: 180px;
+  // width: 185px;
+  @media screen and (min-width: 1024px) and (max-width: 1200px) {
+    width: 250px;
+  }
+  margin-inline: auto;
+  // }
+
   & + & {
     margin-top: 46px;
     @include mq(pc) {
@@ -420,6 +452,16 @@ body {
   align-items: center;
   justify-content: center;
 }
+.flow__item--container {
+  height: 100%;
+  // @include mq(pc) {
+  //   max-width: calc(880px + 32px * 2);
+  // }
+  padding: 10px;
+  margin-inline: auto;
+  background: map.get($color, white);
+}
+
 .flow__item-img {
   text-align: center;
   margin-bottom: 24px;
