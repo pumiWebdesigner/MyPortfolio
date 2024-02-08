@@ -20,7 +20,8 @@
   right: 20px;
   width: 52px;
   height: 52px;
-  z-index: 100;
+
+  z-index: map.get($layer, totop);
   // @include mq(sp) {
   //   right: 12px;
   //   bottom: 98px;
@@ -28,5 +29,8 @@
   .is-scroll & {
     pointer-events: auto;
     opacity: 1;
+  }
+  .drawer-open & {
+    opacity: 0;
   }
 }
