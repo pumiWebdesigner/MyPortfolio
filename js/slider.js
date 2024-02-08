@@ -1,9 +1,9 @@
 const swiper = new Swiper(".swiper", {
-  speed: 1000, // 次の画像を読み込む速さ
+  speed: 500, // 次の画像を読み込む速さ
   loop: true,
-  loopedSlides: 3, //3個目の先に1個目を表示してくれる
+  loopedSlides: 3,
   autoplay: {
-    delay: 300000, // 次の画像に切替する時間
+    delay: 2000, // 次の画像に切替する時間
     disableOnInteraction: false, // スライドのドラッグ等の操作時でも自動再生を無効にしない：false
   },
   effect: "fade", // フワッと切替
@@ -14,5 +14,9 @@ const swiper = new Swiper(".swiper", {
     el: ".swiper-pagination",
     type: "bullets",
     clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
 });
