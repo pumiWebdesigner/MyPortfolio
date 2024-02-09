@@ -62,7 +62,7 @@
     position: fixed;
 
     z-index: map.get($layer, drawer);
-    padding-top: $header-height;
+    padding-top: map.get($header, sp-height);
     height: 100vh;
     top: 0;
     width: 100%;
