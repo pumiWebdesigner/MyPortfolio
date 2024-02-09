@@ -61,7 +61,7 @@ body {
   // width: min(100%, 360px);
   // padding-block: 32px;
   margin-top: 30px;
-  padding: 10px 10px 20px;
+  padding: 10px 10px 40px;
   // background: map.get($color, section-sub);
   img {
     aspect-ratio: 3 / 2;
@@ -106,17 +106,21 @@ body {
 
   .swiper-pagination {
     // bottom: -5px;
-    bottom: 0;
+    bottom: 7px;
   }
   .swiper-pagination-bullet {
     background: #c2c2c2;
-    width: 8px;
-    height: 8px;
+    // width: 8px;
+    // height: 8px;
+    width: 15px;
+    height: 15px;
+    padding: 6px;
     opacity: 0.8;
-    @include mq(sp) {
-      width: 6px;
-      height: 6px;
-    }
+    margin: 0 10px !important;
+    // @include mq(sp) {
+    //   width: 6px;
+    //   height: 6px;
+    // }
   }
   .swiper-pagination-bullet-active {
     background: map.get($color, main);

@@ -345,8 +345,8 @@ a {
   .drawer__nav {
     display: block;
     position: fixed;
-    z-index: 15;
-    padding-top: 150px;
+    z-index: 90;
+    padding-top: 120px;
     height: 100vh;
     top: 0;
     width: 100%;
@@ -382,11 +382,14 @@ a {
   right: 20px;
   width: 52px;
   height: 52px;
-  z-index: 100;
+  z-index: 80;
 }
 .is-scroll .footer__pagetop {
   pointer-events: auto;
   opacity: 1;
+}
+.drawer-open .footer__pagetop {
+  opacity: 0;
 }
 
 .wrapper {
