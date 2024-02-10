@@ -33,3 +33,32 @@
     background-size: 100% 1px; /* 線の横幅を100%にする */
   }
 }
+
+@keyframes kirin-dash {
+  // キリンの向き（0degで右向き、180degで左向き）
+  $kirin-direction: 0deg;
+  // キリン左端
+  0%,
+  100% {
+    left: 30px;
+    transform: rotate(0deg);
+  }
+  // キリン右端
+  50% {
+    right: 30px;
+  }
+  // 5%～95%の間5%毎に傾き幅を反転
+  // 50%以上でキリンの向きを反転
+  @for $i from 1 through 19 {
+    @if $i >= 10 {
+      $kirin-direction: 180deg;
+    }
+    #{calc($i * 5%)} {
+      @if $i % 2 == 0 {
+        transform: rotate(calc(15deg * -1)) rotateY($kirin-direction);
+      } @else {
+        transform: rotate(calc(15deg * 1)) rotateY($kirin-direction);
+      }
+    }
+  }
+}

@@ -145,8 +145,8 @@ body {
     z-index: -1;
   }
   &::after {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -523,4 +523,19 @@ body {
 }
 .page-bottom__item-twitter {
   background-color: map.get($color, bg-dark);
+}
+
+// ダッシュする領域
+.introduction__kirin-dash {
+  height: 170px;
+  position: relative;
+}
+.introduction__kirin-dash--kirin {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  // キリンの横幅、縦幅は画像に合わせる
+  width: 139px;
+  height: auto;
+  animation: kirin-dash 18s infinite linear forwards;
 }
