@@ -40,12 +40,15 @@
   // キリン左端
   0%,
   100% {
+    // right: auto;
     left: 30px;
     transform: rotate(0deg);
   }
   // キリン右端
   50% {
-    right: 30px;
+    // right: 30px;
+    // left: auto;
+    left: calc(100%- 30px);
   }
   // 5%～95%の間5%毎に傾き幅を反転
   // 50%以上でキリンの向きを反転
