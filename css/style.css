@@ -608,12 +608,12 @@ a {
 @media screen and (min-width: 1024px) {
   @-webkit-keyframes kirin-dash {
     0%, 100% {
-      left: 30px;
+      left: 15px;
       -webkit-transform: rotate(0deg);
               transform: rotate(0deg);
     }
     50% {
-      left: calc(100vw - 200px - 100px - 30px);
+      left: calc(100vw - 200px - 100px - 15px);
     }
     5% {
       -webkit-transform: rotate(15deg) rotateY(0deg);
@@ -694,12 +694,12 @@ a {
   }
   @keyframes kirin-dash {
     0%, 100% {
-      left: 30px;
+      left: 15px;
       -webkit-transform: rotate(0deg);
               transform: rotate(0deg);
     }
     50% {
-      left: calc(100vw - 200px - 100px - 30px);
+      left: calc(100vw - 200px - 100px - 15px);
     }
     5% {
       -webkit-transform: rotate(15deg) rotateY(0deg);

@@ -77,12 +77,12 @@
     0%,
     100% {
       // right: auto;
-      left: 30px;
+      left: 15px;
       transform: rotate(0deg);
     }
     // キリン右端
     50% {
-      left: calc(100vw - 200px - 100px - 30px);
+      left: calc(100vw - 200px - 100px - 15px);
       // right: 30px;
       // left: auto;
       // right: calc(100vw - 30px);
