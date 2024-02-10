@@ -526,16 +526,16 @@ body {
 }
 
 // ダッシュする領域
-.introduction__kirin-dash {
+.kirin-dash {
   height: 170px;
   position: relative;
 }
-.introduction__kirin-dash--kirin {
+.kirin-dash--kirin {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   // キリンの横幅、縦幅は画像に合わせる
-  width: 139px;
+  width: 100px;
   height: auto;
-  animation: kirin-dash 18s infinite linear forwards;
+  animation: kirin-dash 8s infinite linear forwards;
 }
