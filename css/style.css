@@ -89,7 +89,7 @@ a {
     transition: background 0.3s, color 0.3s, opacity 0.3s;
   }
   .button:hover {
-    background-color: #fff;
+    background-color: white;
   }
   .button:hover .button__icon-path {
     fill: #4a4a4a;
@@ -100,7 +100,7 @@ a {
 }
 
 .button-contact {
-  background-color: #fff;
+  background-color: white;
 }
 @media screen and (min-width: 1024px) {
   .button-contact:hover {
@@ -109,7 +109,7 @@ a {
 }
 
 .button-border {
-  border: 1px solid #fff;
+  border: 1px solid white;
 }
 
 .button__icon {
@@ -123,7 +123,7 @@ a {
 }
 
 .button__icon-path {
-  fill: #fff;
+  fill: white;
 }
 
 .button__icon-path-contact {
@@ -134,7 +134,7 @@ a {
   margin-left: 10px;
   font-size: 16px;
   letter-spacing: 0.08em;
-  color: #fff;
+  color: white;
 }
 
 .button__text-contact {
@@ -215,6 +215,7 @@ a {
   background: transparent;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  color: white;
 }
 @media screen and (max-width: 1023px) {
   .is-scroll .header {
@@ -250,7 +251,6 @@ a {
   padding: 14px 24px;
   font-size: 20px;
   letter-spacing: 0.12em;
-  color: #fff;
 }
 @media screen and (min-width: 1024px) {
   .header__logo {
@@ -293,7 +293,7 @@ a {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   bottom: 0;
-  color: #fff;
+  color: white;
   font-family: "Roboto Mono", monospace;
   font-size: 12px;
   font-weight: 500;
@@ -309,7 +309,7 @@ a {
   right: 0;
   width: 100%;
   height: 2px;
-  background: #fff;
+  background: white;
   border-radius: 1px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -362,7 +362,7 @@ a {
 }
 
 .footer {
-  background: #fff;
+  background: white;
   text-align: center;
   padding: 10px;
 }
@@ -392,6 +392,46 @@ a {
   opacity: 0;
 }
 
+.hover--bgc-slide {
+  position: relative;
+  overflow: hidden;
+}
+.hover--bgc-slide::before {
+  content: "";
+  -webkit-transform-origin: 0% 50%;
+          transform-origin: 0% 50%;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: rgb(255, 240, 228);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.hover--bgc-slide:hover::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.hover__underline--from-left {
+  background-image: -webkit-gradient(linear, left top, right top, from(#f00), to(#f00));
+  background-image: linear-gradient(90deg, #f00, #f00); /* 改行しても下線を表示させるためにimage */
+  background-repeat: no-repeat;
+  background-position: left bottom; /* X軸の起点 Y軸の起点 */
+  background-size: 0 1px; /* 線の横幅を0、縦幅を1pxに */
+  -webkit-transition: background-size 0.3s;
+  transition: background-size 0.3s; /* 線を伸ばすアニメーション実行時間を指定 */
+}
+.hover__underline--from-left:hover {
+  background-size: 100% 1px; /* 線の横幅を100%にする */
+}
+
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -417,11 +457,11 @@ body {
 .bg {
   background: url("../img/img_fv.jpg") top center/cover no-repeat;
   position: fixed;
-  z-index: -1;
-  right: 0;
-  width: 100%;
   top: 0;
   height: 100vh;
+  right: 0;
+  width: 100%;
+  z-index: -1;
 }
 @media screen and (min-width: 1024px) {
   .bg {
@@ -546,7 +586,7 @@ body {
 }
 
 .skills__contents {
-  background: #fff;
+  background: white;
   -webkit-box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
           box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
   margin-top: 30px;
@@ -606,7 +646,6 @@ body {
 }
 .skills__messages li {
   margin-top: 10px;
-  font-weight: bold;
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) and (max-width: 1200px) {
   .skills__messages li {
@@ -696,6 +735,10 @@ body {
   }
 }
 
+.about__text {
+  margin-top: 10px;
+}
+
 .flow {
   background-color: #fafafa;
 }
@@ -747,7 +790,7 @@ body {
           transform: translateX(-50%);
   font-size: 24px;
   background-color: #4a4a4a;
-  color: #fff;
+  color: white;
   width: 48px;
   height: 48px;
   display: -webkit-box;
@@ -765,7 +808,7 @@ body {
   height: 100%;
   padding: 10px;
   margin-inline: auto;
-  background: #fff;
+  background: white;
 }
 
 .flow__item-img {
@@ -822,7 +865,7 @@ body {
 }
 
 .page-bottom {
-  color: #fff;
+  color: white;
 }
 @media screen and (min-width: 1024px) {
   .page-bottom {

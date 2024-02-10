@@ -45,6 +45,7 @@
 
   //スクロール後処理__画面最上部からtargetの場所を超えたら起動
   jQuery(window).on("scroll", function () {
+    // target：スマホのheader色、to-topボタン
     var target = 300;
     if (jQuery(this).scrollTop() > target) {
       jQuery("body").addClass("is-scroll");
@@ -53,3 +54,15 @@
     }
   });
 }
+
+// var windowHeight = jQuery(window).height(); // ウィンドウの高さ
+// console.log("windowHeight", windowHeight);
+
+// var scrollPosition = jQuery(window).scrollTop(); // スクロール位置
+// console.log("scrollPosition", scrollPosition);
+
+// var offsetTop = jQuery(this).offset().top; // 要素の上端の位置
+// console.log("offsetTop", offsetTop);
+
+// var elementHeight = jQuery(this).outerHeight(); // 要素の高さ
+// console.log("elementHeight", elementHeight);

@@ -2,7 +2,7 @@
 @use "../global" as *;
 
 .footer {
-  background: map.get($color, footer-bg);
+  background: white;
   text-align: center;
   padding: 10px;
 }

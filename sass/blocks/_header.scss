@@ -12,6 +12,8 @@
   height: map.get($header, sp-height);
   background: transparent;
   transition: 0.5s;
+  color: white;
+
   @include mq(sp) {
     .is-scroll & {
       background: map.get($color, header-bg-sp);
@@ -20,7 +22,7 @@
   @include mq(pc) {
     position: relative;
     // display: block;
-    background: map.get($color, header-bg);
+    background: map.get($color, header-bg-pc);
     width: map.get($header, pc-width);
     // bottom: 0;
     // height: 100vh;
@@ -51,7 +53,6 @@
   padding: 14px 24px;
   font-size: 20px;
   letter-spacing: 0.12em;
-  color: map.get($color, white);
   @include mq(pc) {
     font-size: 30px;
   }
