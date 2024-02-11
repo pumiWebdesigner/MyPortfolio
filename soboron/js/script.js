@@ -1,7 +1,7 @@
 {
   //ｽﾑｰｽﾞｽｸﾛｰﾙ(aﾀｸﾞ_ｸﾘｯｸ)
-  jQuery('a[href^="#"]').on("click", function () {
-    // e.preventDefault();
+  jQuery('a[href^="#"]').on("click", function (e) {
+    e.preventDefault();
 
     if (jQuery(this).hasClass("js-open-button")) {
       return;
