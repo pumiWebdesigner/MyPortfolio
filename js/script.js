@@ -54,15 +54,3 @@
     }
   });
 }
-
-// var windowHeight = jQuery(window).height(); // ウィンドウの高さ
-// console.log("windowHeight", windowHeight);
-
-// var scrollPosition = jQuery(window).scrollTop(); // スクロール位置
-// console.log("scrollPosition", scrollPosition);
-
-// var offsetTop = jQuery(this).offset().top; // 要素の上端の位置
-// console.log("offsetTop", offsetTop);
-
-// var elementHeight = jQuery(this).outerHeight(); // 要素の高さ
-// console.log("elementHeight", elementHeight);
