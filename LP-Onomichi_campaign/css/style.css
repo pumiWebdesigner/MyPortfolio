@@ -2777,14 +2777,11 @@ input[type=radio] + label::after {
   background: #9ed0e0;
   content: "";
   position: absolute;
-  top: 4px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   left: 6px;
   opacity: 0;
-}
-@media screen and (min-width: 1025px) {
-  input[type=radio] + label::after {
-    top: 6px;
-  }
 }
 input[type=radio]:hover + label::before, input[type=radio]:focus + label::before {
   border: 1px solid #9ed0e0;
@@ -2933,14 +2930,11 @@ input[type=checkbox] + label::after {
   height: 6px;
   content: "";
   position: absolute;
-  top: 5px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   left: 6px;
   opacity: 0;
-}
-@media screen and (min-width: 1025px) {
-  input[type=checkbox] + label::after {
-    top: 7px;
-  }
 }
 input[type=checkbox]:checked + label::before {
   border: 1px solid #9ed0e0;

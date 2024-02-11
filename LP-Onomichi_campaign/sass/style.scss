@@ -2120,7 +2120,6 @@ select {
     right: 0;
     width: 52px;
     height: 56px;
-    // height: 100%;
     background: $color-main no-repeat url(../img/Icon/Icon=arrow-bottom.svg) center center;
     pointer-events: none;
   }
@@ -2182,10 +2181,8 @@ input {
         background: $color-main;
         content: "";
         position: absolute;
-        top: 4px;
-        @include mq(pc) {
-          top: 6px;
-        }
+        top: 50%;
+        transform: translateY(-50%);
         left: 6px;
         opacity: 0;
       }
@@ -2299,12 +2296,10 @@ input {
         height: 6px;
         content: "";
         position: absolute;
-        top: 5px;
+        top: 50%;
+        transform: translateY(-50%);
         left: 6px;
         opacity: 0;
-        @include mq(pc) {
-          top: 7px;
-        }
       }
     }
     // checked時に表示
