@@ -1121,10 +1121,10 @@ table {
   background: url(../img/qa-bg.png) top center/cover;
   position: relative;
   z-index: 1;
-  background-attachment: fixed;
 }
 @media screen and (min-width: 768px) {
   .faqs {
+    background-attachment: fixed;
     margin-top: 120px;
     padding: 56px 0 124px;
   }

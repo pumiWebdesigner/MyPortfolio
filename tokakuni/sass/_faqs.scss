@@ -6,10 +6,10 @@
   //bg-wrapperより前に表示するための設定
   position: relative;
   z-index: 1;
-  //画像をビューポートに固定させる
-  background-attachment: fixed;
 
   @include base.mq(pc) {
+    //画像をビューポートに固定させる
+    background-attachment: fixed;
     margin-top: 120px;
     padding: 56px 0 124px;
   }
