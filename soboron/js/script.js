@@ -1,9 +1,15 @@
 {
   //ｽﾑｰｽﾞｽｸﾛｰﾙ(aﾀｸﾞ_ｸﾘｯｸ)
   jQuery('a[href^="#"]').on("click", function () {
-    if (jQuery(this) === jQuery(".js-open-button")) {
+    // e.preventDefault();
+
+    if (jQuery(this).hasClass("js-open-button")) {
       return;
     }
+    // if (jQuery(this).hasClass("drawer-menu-item")) {
+    //   alert("a");
+    //   return;
+    // }
     var header = jQuery(".header").innerHeight();
     var id = jQuery(this).attr("href");
     // #は初期値0,#以外はoffset().top
