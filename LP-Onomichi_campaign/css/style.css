@@ -2922,18 +2922,16 @@ input[type=checkbox] + label::before {
   left: 0;
 }
 input[type=checkbox] + label::after {
-  border-bottom: solid 2px #67b0c7;
-  border-left: solid 2px #67b0c7;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  width: 12px;
-  height: 6px;
   content: "";
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  height: 6px;
   left: 6px;
+  width: 12px;
+  border-bottom: solid 2px #67b0c7;
+  border-left: solid 2px #67b0c7;
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+          transform: translateY(-50%) rotate(-45deg);
   opacity: 0;
 }
 input[type=checkbox]:checked + label::before {

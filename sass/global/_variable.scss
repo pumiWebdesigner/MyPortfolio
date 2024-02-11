@@ -8,17 +8,20 @@ $color: (
   accent: #f00,
   hov-btn: rgba(255, 240, 228, 1),
   // header-bg: linear-gradient(to bottom, #77f, #00f),
-  header-bg-pc: linear-gradient(to bottom, blue, gray, black),
+  // header-bg-pc: linear-gradient(to bottom, blue, gray, black),
+  header-bg-pc: linear-gradient(to bottom, blue, transparent, black),
   header-bg-sp: blue,
-  drawer-bg-sp: linear-gradient(to bottom, blue, gray, black),
-  section-main: #fff,
+  // drawer-bg-sp: linear-gradient(to bottom, blue, gray, black),
+  drawer-bg-sp: linear-gradient(to bottom, blue, transparent, black),
+  //途中から透明にするためにgradient
+  test: linear-gradient(to bottom, #3e3e3e 0, #3e3e3e 400px, transparent 600px, red 100%) ; section-main: #fff,
   section-sub: rgb(255, 240, 228),
   // footer-bg: #fff,
   bg-dark: #4a4a4a,
   // bg-middle: #a98c5f,
   // bg-light: #fafafa,
   // cl-border: #808080,
-  // bg-gray-l: #6f6f6f,,,,,,,
+  // bg-gray-l: #6f6f6f,,,,,,,,
 );
 
 // 階層

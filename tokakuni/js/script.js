@@ -79,13 +79,11 @@ $(document).ready(function () {
           //送信に成功したときの処理
           $content.slideUp();
           jQuery("#js-success").slideDown();
-          alert("success");
         },
         200: function () {
           //送信に失敗したときの処理
           $content.slideUp();
           jQuery("#js-error").slideDown();
-          alert("miss");
         },
       },
     });

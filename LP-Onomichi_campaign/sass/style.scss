@@ -2288,17 +2288,15 @@ input {
       }
       // チェックボックス（クリック後）
       &::after {
-        // チェックマーク
-        border-bottom: solid 2px #67b0c7;
-        border-left: solid 2px #67b0c7;
-        transform: rotate(-45deg);
-        width: 12px;
-        height: 6px;
         content: "";
         position: absolute;
         top: 50%;
-        transform: translateY(-50%);
+        height: 6px;
         left: 6px;
+        width: 12px;
+        border-bottom: solid 2px #67b0c7;
+        border-left: solid 2px #67b0c7;
+        transform: translateY(-50%) rotate(-45deg);
         opacity: 0;
       }
     }

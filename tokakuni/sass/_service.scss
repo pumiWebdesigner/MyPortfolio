@@ -2,8 +2,7 @@
 @use "base";
 
 .service {
-  //途中から透明にするためにgradient
-  background: linear-gradient(to bottom, #3e3e3e 0, #3e3e3e 400px, transparent 600px, red 100%);
+  background: black;
 
   margin-top: 60px;
   padding-top: 36px;
