@@ -58,7 +58,7 @@
   fill: map.get($color, bg-dark);
 }
 
-// ボタンの文字設定
+// ボタンの文字設定（contact以外）
 .button__text {
   margin-left: 10px;
   font-size: 16px;
@@ -66,7 +66,7 @@
   color: white;
 }
 
-// ボタンの文字設定（contactは別の色）
+// ボタンの文字設定（contact）
 .button__text-contact {
   color: map.get($color, bg-dark);
 }

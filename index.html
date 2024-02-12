@@ -7,14 +7,8 @@
     <!-- nodndexの記載 -->
     <meta name="robots" content="noindex" />
     <title>ポートフォリオサイト</title>
-    <!-- 概要descriptionの記載 -->
     <meta name="description" content="WEBコーダーpumiのポートフォリオサイトです。お客様に寄り添ったホームページ制作が得意です。理想のホームページを一緒に作っていきましょう。" />
-    <!-- GoogleFonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&amp;family=Oswald:wght@400;500&amp;display=swap" rel="stylesheet" />
-
-    <!-- twitterｶｰﾄﾞ -->
+    <!-- twitterｶｰﾄﾞ,OGP -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@pumiWebdesigner" />
     <!-- <meta property="og:url" content="https://www.pumi-blog.site/" /> -->
@@ -22,9 +16,12 @@
     <meta property="og:description" content="プミのポートフォリオです" />
     <meta property="og:image" content="./img/favicon.png" />
     <link rel="icon" href="./img/favicon.png" type="image/png" />
-    <!-- 事前に読込画像みしておく -->
-    <link rel="preload" href="./img/bg_fv.png" as="image" />
-    <link rel="preload" href="./img/img_fv.jpg" as="image" />
+    <!-- GoogleFonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&amp;family=Oswald:wght@400;500&amp;display=swap" rel="stylesheet" />
+
+    <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js" defer></script>
@@ -35,14 +32,13 @@
     <!-- wow -->
     <link rel="stylesheet" href="./css/animate.css" />
     <script src="./dist/wow.min.js"></script>
-    <!-- wow(CDN) -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" /> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script> -->
-    <!-- 通常のcss -->
-    <!-- <link rel="stylesheet" href="./css/reset.css" /> -->
+    <!-- css読み込み -->
     <link rel="stylesheet" href="./css/style.css" />
-    <!-- JavaScript -->
+    <!-- JavaScript読み込み -->
+    <script src="./js/dialog.js" defer></script>
     <script src="./js/script.js" defer></script>
+    <!-- 優先表示画像の事前読込 -->
+    <link rel="preload" href="./img/img_fv.jpg" as="image" />
   </head>
 
   <body>
@@ -84,17 +80,10 @@
                         class="button__icon-path"
                       />
                     </svg>
-                    <!-- <svg width="21" height="16" viewBox="0 0 21 16" fill="none" >
-                      <path
-                        d="M4.2 0.635498C3.04172 0.635498 2.1 1.57078 2.1 2.72115V11.0638H4.2V2.72115H16.8V11.0638H18.9V2.72115C18.9 1.57078 17.9583 0.635498 16.8 0.635498H4.2ZM0.63 12.1066C0.282187 12.1066 0 12.3868 0 12.7323C0 14.114 1.12875 15.2351 2.52 15.2351H18.48C19.8712 15.2351 21 14.114 21 12.7323C21 12.3868 20.7178 12.1066 20.37 12.1066H0.63Z"
-                        class="button__icon-path"
-                      />
-                    </svg> -->
                   </span>
                   <span class="button__text">Skills -</span>
                 </a>
               </li>
-
               <!-- about -->
               <li class="header__nav-item">
                 <a href="#about" class="header__nav-link js-drawer__nav--link button">
@@ -155,7 +144,7 @@
                   <span class="button__text button__text-contact">Contact -</span>
                 </a>
               </li>
-              <!-- twitter -->
+              <!-- twitter(X) -->
               <li class="header__nav-item">
                 <a href="https://twitter.com/pumi_webcoder" class="header__nav-link js-drawer__nav--link button button-border">
                   <span class="button__icon">
@@ -166,7 +155,7 @@
                       />
                     </svg>
                   </span>
-                  <span class="button__text">Twitter -</span>
+                  <span class="button__text">Twitter(X) -</span>
                 </a>
               </li>
             </ul>
@@ -195,6 +184,13 @@
                         <li class="swiper-slide">
                           <a href="./LP-Onomichi_campaign/index.html" target="_blank">
                             <div class="works__img">
+                              <img src="./img/lp-team-h.png" alt="仮想の子供向けクリニックLP（チーム開発）" width="1794" height="1101" loading="lazy" decoding="async" />
+                            </div>
+                          </a>
+                        </li>
+                        <li class="swiper-slide">
+                          <a href="./LP-Onomichi_campaign/index.html" target="_blank">
+                            <div class="works__img">
                               <img src="./img/onomichi.jpg" alt="尾道キャンペーンのLP" width="1262" height="872" loading="lazy" decoding="async" />
                             </div>
                           </a>
@@ -204,20 +200,53 @@
                             <div class="works__img"><img src="./img/tokaniku.jpg" alt="ﾎﾟｰﾄﾌｫﾘｵｻｲﾄ" width="1215" height="632" loading="lazy" decoding="async" /></div>
                           </a>
                         </li>
-                        <li class="swiper-slide">
+                        <!-- <li class="swiper-slide">
                           <a href="./soboron/index.html" target="_blank">
                             <div class="works__img"><img src="./img/sobolon.jpg" alt="ｱｸｾｻﾘｼｮｯﾌﾟのLP" width="1232" height="719" loading="lazy" decoding="async" /></div>
                           </a>
+                        </li> -->
+                        <li class="swiper-slide">
+                          <div class="works__img js-modal__btn--open modal__btn--open">
+                            <img src="./img/sobolon.jpg" alt="ｱｸｾｻﾘｼｮｯﾌﾟのLP" width="1232" height="719" loading="lazy" decoding="async" />
+                          </div>
+                          <dialog class="dialog__wrapper">
+                            <div class="dialog__container">
+                              <div class="dialog__img">
+                                <img src="./img/sobolon.jpg" alt="ｱｸｾｻﾘｼｮｯﾌﾟのLP" width="1232" height="719" loading="lazy" decoding="async" />
+                              </div>
+                              <div class="dialog__text">
+                                <dl>
+                                  <dt>スキル</dt>
+                                  <dd>◯◯</dd>
+                                  <dt>制作時期</dt>
+                                  <dd>◯◯</dd>
+                                  <dt>制作時間</dt>
+                                  <dd>◯◯</dd>
+                                  <dt>こだわりポイント</dt>
+                                  <dd>◯◯</dd>
+                                </dl>
+                                <div class="modal__buttons">
+                                  <!-- <div class="modal__button modal__button--link"> -->
+                                  <a class="modal__button modal__button--link" href="./soboron/index.html" target="_blank">ページを見る </a>
+                                  <!-- </div> -->
+                                  <form method="dialog">
+                                    <button class="modal__button dialog__button--close">閉じる</button>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- <button class="js-modal__btn--clese modal__btn--clese">Close</button> -->
+                          </dialog>
                         </li>
                       </ul>
                       <div class="swiper-button-prev"></div>
                       <div class="swiper-button-next"></div>
                       <div class="swiper-pagination"></div>
                     </div>
-                    <!-- <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div> -->
                   </div>
                 </div>
+                <div class="section__foot">Basic認証を設定しております。<br />ユーザー名・パスワードともに『demo』となります。</div>
               </div>
             </section>
             <!-- skills -->
@@ -359,7 +388,7 @@
           </div>
         </section>
 
-        <!-- contact,twitter -->
+        <!-- contact,twitter(X) -->
         <div class="page-bottom wow fadeInUp">
           <!-- contact -->
           <div id="contact" class="page-bottom__item page-bottom__item-contact">
@@ -379,11 +408,11 @@
               <span class="button__text">Contact -</span>
             </a>
           </div>
-          <!-- twitter -->
+          <!-- twitter(X) -->
           <div id="twitter" class="page-bottom__item page-bottom__item-twitter">
             <h2 class="section__head section__head-center">
-              <span class="section__head-main">Twitter -</span>
-              <span class="section__head-sub">ツイッター</span>
+              <span class="section__head-main">Twitter(X) -</span>
+              <span class="section__head-sub">ツイッター(X)</span>
             </h2>
             <a href="https://twitter.com/pumi_webcoder" target="_blank" class="page-bottom__button button button-border">
               <span class="button__icon">
@@ -394,7 +423,7 @@
                   />
                 </svg>
               </span>
-              <span class="button__text">Twitter -</span>
+              <span class="button__text">Twitter(X) -</span>
             </a>
           </div>
         </div>

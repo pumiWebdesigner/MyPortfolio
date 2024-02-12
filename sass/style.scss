@@ -60,12 +60,15 @@ body {
   margin-top: 30px;
   padding: 10px 10px 40px;
   // background: map.get($color, section-sub);
+}
+.works__img {
   img {
     aspect-ratio: 3 / 2;
     object-fit: cover;
     transition: 1s;
     &:hover {
       transform: scale(1.2);
+      opacity: 0.5;
     }
   }
 

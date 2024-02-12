@@ -1,19 +1,21 @@
-//ブレークポイントとmixin
-$tb-size: 768px;
-$pc-size: 1024px;
+@use "sass:map";
 
-// ブレイクポイント
 $breakpoints: (
-  // "sp": "screen and (max-width: #{$tb-size - 1px})",
-  "sp": "screen and (max-width: #{$pc-size - 1px})",
-  "tb": "screen and (min-width: #{$tb-size}) and (max-width: #{$pc-size - 1px})",
-  // "pc": "screen and (min-width: #{$tb-size})",
-  "pc": "screen and (min-width: #{$pc-size})"
+  // "sp": "(width <= 767px)",
+  "sp": "(width <= 1023px)",
+  "tb": "(768px <= width <=  1023px)",
+  "pc": "(1024px <= width)",
+  // "pc": "(768px <= width)",
 ) !default;
 
 // mixinメディアクエリ（@use "sass:map";が必要）
+// @mixin mq($breakpoint: "sp") {
+//   @media #{map-get($breakpoints, $breakpoint)} {
+//     @content;
+//   }
+// }
 @mixin mq($breakpoint: "sp") {
-  @media #{map-get($breakpoints, $breakpoint)} {
+  @media #{map.get($breakpoints, $breakpoint)} {
     @content;
   }
 }
