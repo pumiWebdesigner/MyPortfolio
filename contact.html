@@ -167,23 +167,23 @@
         <div class="bg"></div>
         <section id="contact" class="contact">
           <div class="contact__inner">
-            <div class="util_title">
-              <h2 class="section__head section__head-center">
-                <span class="section__head-main">お問い合わせ</span>
-                <div class="header__nav-link js-drawer__nav--link button button-contact">
-                  <span class="button__icon">
-                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none">
-                      <path
-                        d="M2.5 2.28406C2.15625 2.28406 1.875 2.56339 1.875 2.90479V3.76217L8.61328 9.25563C9.42188 9.91515 10.582 9.91515 11.3906 9.25563L18.125 3.76217V2.90479C18.125 2.56339 17.8438 2.28406 17.5 2.28406H2.5ZM1.875 6.17138V12.8365C1.875 13.1779 2.15625 13.4572 2.5 13.4572H17.5C17.8438 13.4572 18.125 13.1779 18.125 12.8365V6.17138L12.5781 10.6949C11.0781 11.917 8.91797 11.917 7.42188 10.6949L1.875 6.17138ZM0 2.90479C0 1.53531 1.12109 0.421875 2.5 0.421875H17.5C18.8789 0.421875 20 1.53531 20 2.90479V12.8365C20 14.2059 18.8789 15.3194 17.5 15.3194H2.5C1.12109 15.3194 0 14.2059 0 12.8365V2.90479Z"
-                        class="button__icon-path button__icon-path-contact"
-                      />
-                    </svg>
-                  </span>
-                  <span class="button__text button__text-contact">Contact -</span>
-                </div>
-              </h2>
-              <span class="button__text">Contact -</span>
-            </div>
+            <!-- <div class="util_title"> -->
+            <h2 class="section__head section__head-center">
+              <span class="section__head-main">お問い合わせ</span>
+              <div class="header__nav-link js-drawer__nav--link button button-contact">
+                <span class="button__icon">
+                  <svg width="20" height="16" viewBox="0 0 20 16" fill="none">
+                    <path
+                      d="M2.5 2.28406C2.15625 2.28406 1.875 2.56339 1.875 2.90479V3.76217L8.61328 9.25563C9.42188 9.91515 10.582 9.91515 11.3906 9.25563L18.125 3.76217V2.90479C18.125 2.56339 17.8438 2.28406 17.5 2.28406H2.5ZM1.875 6.17138V12.8365C1.875 13.1779 2.15625 13.4572 2.5 13.4572H17.5C17.8438 13.4572 18.125 13.1779 18.125 12.8365V6.17138L12.5781 10.6949C11.0781 11.917 8.91797 11.917 7.42188 10.6949L1.875 6.17138ZM0 2.90479C0 1.53531 1.12109 0.421875 2.5 0.421875H17.5C18.8789 0.421875 20 1.53531 20 2.90479V12.8365C20 14.2059 18.8789 15.3194 17.5 15.3194H2.5C1.12109 15.3194 0 14.2059 0 12.8365V2.90479Z"
+                      class="button__icon-path button__icon-path-contact"
+                    />
+                  </svg>
+                </span>
+                <span class="button__text button__text-contact">Contact -</span>
+              </div>
+            </h2>
+            <span class="button__text">Contact -</span>
+            <!-- </div> -->
 
             <div class="contact-content">
               <form
@@ -191,8 +191,9 @@
                 class="contact-form"
                 method="post"
                 action="
-              https://docs.google.com/forms/u/0/d/e/1FAIpQLSeQt99ay--2ZByKpw5FOMijybzyCwyOOB-fiYrwmcj0SAjdcQ/formResponse
+              https://docs.google.com/forms/u/0/d/e/1FAIpQLSdJq9RtyK_ZOIa4ehi92lMGJouvBIXhEBzSsltfstKmzat1Jg/formResponse
               "
+                novalidate
               >
                 <div class="contact__attention">
                   ご相談やご質問など、お気軽にご連絡ください。
@@ -203,14 +204,14 @@
                   <div class="contact-item is-required">
                     <dt class="contact-item-title">お名前<span class="contact-require-label">必須</span></dt>
                     <dd class="contact-input-box">
-                      <input type="text" placeholder="山田太郎" name="entry.226116215" required />
+                      <input type="text" placeholder="山田太郎" name="entry.530212225" />
                     </dd>
                   </div>
 
                   <div class="contact-item is-required">
                     <dt class="contact-item-title">メールアドレス<span class="contact-require-label">必須</span></dt>
                     <dd class="contact-input-box">
-                      <input type="email" placeholder="info@example.com" name="emailAddress" required />
+                      <input class="input-email" type="email" placeholder="info@example.com" name="emailAddress" />
                     </dd>
                   </div>
 
@@ -230,15 +231,15 @@
                     <dt class="contact-item-title">お問い合わせ内容（概要）<span class="contact-require-label">必須</span></dt>
                     <dd class="contact-input-box contact-radio-box">
                       <div class="contact-radio">
-                        <input id="Creation" type="radio" name="entry.1901844758" value="ホームページ制作" checked required />
+                        <input id="Creation" type="radio" name="entry.716562788" value="ホームページ制作" checked />
                         <label for="Creation" class="contact-radio-label">ホームページ制作</label>
                       </div>
                       <div class="contact-radio">
-                        <input id="Modification" type="radio" name="entry.1901844758" value="ホームページ修正" />
+                        <input id="Modification" type="radio" name="entry.716562788" value="ホームページ修正" />
                         <label for="Modification" class="contact-radio-label">ホームページ修正</label>
                       </div>
                       <div class="contact-radio">
-                        <input id="Consultation" type="radio" name="entry.1901844758" value="ホームページ相談" />
+                        <input id="Consultation" type="radio" name="entry.716562788" value="ホームページ相談" />
                         <label for="Consultation" class="contact-radio-label">ホームページ相談</label>
                       </div>
                     </dd>
@@ -247,12 +248,12 @@
                   <div class="contact-item contact-item-message is-required">
                     <dt class="contact-item-title">お問い合わせ内容（詳細）<span class="contact-require-label">必須</span></dt>
                     <dd class="contact-input-box contact-message-box">
-                      <textarea placeholder="お問い合わせ内容をご入力ください。3営業日以内にご返信いたします。" name="entry.2141718066" required></textarea>
+                      <textarea placeholder="お問い合わせ内容をご入力ください。3営業日以内にご返信いたします。" name="entry.1269014493"></textarea>
                     </dd>
                   </div>
                 </dl>
-                <div class="contact-privacy">
-                  <input id="form-privacy" class="contact-privacy-input" type="checkbox" name="entry.550308529" value="プライバシーポリシーに合意する" required />
+                <div class="contact-privacy is-required">
+                  <input id="form-privacy" class="contact-privacy-input" type="checkbox" name="entry.2114229630" value="プライバシーポリシーに合意する" />
 
                   <label for="form-privacy" class="contact-privacy-label"> <a href="#" target="_blank" class="colorchange">プライバシーポリシー</a>に合意する </label>
                 </div>
@@ -260,14 +261,14 @@
               </form>
               <div id="js-success" class="contact__message-success">
                 <p>
-                  送信完了しました。<br />
-                  ありがとうございました。
+                  送信完了しました。
+                  <br />ありがとうございました。 <br />3営業日以内にご返信いたします。
                 </p>
               </div>
               <div id="js-error" class="contact__message-error">
                 <p>
-                  送信に失敗しました。<br />
-                  ページを更新して再度送信してください。
+                  送信に失敗しました。
+                  <br />ページを更新して再度送信してください。
                 </p>
               </div>
             </div>
