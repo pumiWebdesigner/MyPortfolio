@@ -1,0 +1,412 @@
+@use "sass:map";
+@use "../global" as *;
+
+// contact
+.contact {
+  background: #fff;
+  padding-block: 40px 44px;
+  text-align: center;
+  @include mq(pc) {
+    padding-block: 120px;
+  }
+}
+.contact__inner {
+  padding-inline: 20px;
+}
+.contact__attention {
+  margin-top: 24px;
+  font-size: 12px;
+  line-height: 160%;
+  @include mq(pc) {
+    font-size: 16px;
+    margin-top: 32px;
+  }
+}
+.contact-list {
+  max-width: 848px;
+  margin-inline: auto;
+  margin-top: 24px;
+  @include mq(pc) {
+    margin-top: 38px;
+  }
+}
+.contact-item {
+  margin-top: 24px;
+  text-align: left;
+  @include mq(pc) {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+    margin-top: 22px;
+    dt {
+      font-size: 16px;
+      width: 180px;
+    }
+    dd {
+      width: 628px;
+    }
+  }
+}
+.contact-item-message {
+  align-items: start;
+}
+.contact-item-title {
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 160%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.contact-require-label {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 160%;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: red;
+  white-space: nowrap;
+}
+.contact-input-box {
+  margin-top: 8px;
+  @include mq(pc) {
+    width: calc(100% - 180px - 40px);
+    margin-top: 0;
+  }
+}
+// お名前、メールアドレス
+input {
+  &[type="text"],
+  &[type="email"] {
+    // 入力場所
+    border-radius: 8px;
+    overflow: hidden;
+    border: none;
+    background: #f5f5f5;
+    width: 100%;
+    padding: 14px 16px 16px;
+    // 入力文字
+    color: black;
+    font-weight: 400;
+    font-family: inherit;
+    letter-spacing: 0;
+    &::placeholder {
+      color: #ccc;
+      font-family: Noto Sans JP;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 160%;
+      @include mq(pc) {
+        font-size: 16px;
+      }
+    }
+    &:hover,
+    &:focus {
+      border-radius: 8px;
+      border: 1px solid map.get($color, main);
+      background: #e9f6f8;
+      outline: none;
+    }
+  }
+  @include mq(pc) {
+    &[type="email"] {
+      padding: 16px;
+    }
+    &[type="text"] {
+      padding: 18px 15px 16px;
+    }
+  }
+  // エラー時
+  &[type="text"].error,
+  &[type="email"].error,
+  &[type="email"]:invalid {
+    border-radius: 8px;
+    border: 1px solid red;
+    background: #fff0f7;
+    outline: none;
+  }
+}
+.contact-select-box {
+  margin-top: 8px;
+  @include mq(pc) {
+    margin-top: 0;
+  }
+  select {
+    @include mq(pc) {
+      font-size: 16px;
+    }
+  }
+}
+select {
+  // 標準のセレクト矢印を非表示
+  appearance: none;
+  outline: none;
+  // select要素は疑似要素を直接設定不可。親要素で設定する。border-radiusも親要素で設定する。
+  border: none;
+  background: #f5f5f5;
+  width: 100%;
+  height: 56px;
+  padding: 16px;
+  color: black;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 160%;
+  font-family: inherit;
+  letter-spacing: 0;
+  &.error {
+    border-radius: 8px;
+    border: 1px solid red;
+    background: #fff0f7;
+    outline: none;
+  }
+  &:hover,
+  &:focus {
+    border-radius: 8px;
+    border: 1px solid map.get($color, main);
+    background: #e9f6f8;
+    outline: none;
+  }
+}
+.contact-select-box {
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    width: 52px;
+    height: 56px;
+    background: map.get($color, main) no-repeat url(../img/Icon/Icon=arrow-bottom.svg) center center;
+    pointer-events: none;
+  }
+}
+.contact-item-radio {
+  margin-top: 24px;
+}
+.contact-radio-box {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 6px;
+  height: 26px;
+  @include mq(pc) {
+    height: 56px;
+    margin-top: 1px;
+  }
+}
+.contact-radio {
+  display: inline-block;
+}
+
+input {
+  &[type="radio"] {
+    // 標準のラジオボタンを以下５行で非表示
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+    & + label {
+      // ラジオメニュー横の文字
+      font-size: 14px;
+      @include mq(pc) {
+        font-size: 16px;
+        padding-left: 33px;
+      }
+      line-height: 160%;
+      // ラジオメニューの場所
+      padding-left: calc(24px + 8px);
+      position: relative;
+      // ラジオボタン（クリック前）
+      &::before {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: #f5f5f5;
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+      }
+      // ラジオボタン（クリック後）
+      &::after {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: map.get($color, main);
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 6px;
+        opacity: 0;
+      }
+    }
+    &:hover,
+    &:focus {
+      & + label::before {
+        border: 1px solid map.get($color, main);
+      }
+    }
+    // checked時
+    &:checked + label::before {
+      border: 1px solid map.get($color, main);
+    }
+    // checked時に表示
+    &:checked + label::after {
+      opacity: 1;
+    }
+  }
+}
+
+textarea {
+  border-radius: 8px;
+  overflow: hidden;
+  border: none;
+  background: #f5f5f5;
+  width: 100%;
+  padding: 16px;
+  @include mq(pc) {
+    padding-top: 18px;
+  }
+  color: black;
+  font-weight: 400;
+  font-family: inherit;
+  letter-spacing: 0;
+  &::placeholder {
+    color: #ccc;
+    font-family: Noto Sans JP;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 160%;
+    @include mq(pc) {
+      font-size: 16px;
+    }
+  }
+  &.error {
+    border-radius: 8px;
+    border: 1px solid red;
+    background: #fff0f7;
+    outline: none;
+  }
+  &:hover,
+  &:focus {
+    border-radius: 8px;
+    border: 1px solid map.get($color, main);
+    background: #e9f6f8;
+    outline: none;
+  }
+  // textareaはinputに高さ要素も設定する
+  height: 160px;
+  //横方向は固定
+  resize: vertical;
+}
+.contact-privacy {
+  position: relative;
+  margin-top: 21px;
+  @include mq(pc) {
+    margin-top: 42px;
+  }
+}
+input {
+  &[type="checkbox"] {
+    // 標準のチェックボックスを以下５行で非表示
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 52px;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+    & + label {
+      // チェックボックス横の文字
+      font-size: 14px;
+      @include mq(pc) {
+        font-size: 16px;
+      }
+      line-height: 160%;
+      // チェックボックスの場所
+      padding-left: calc(24px + 12px);
+      position: relative;
+      // チェックボックス（クリック前）
+      &::before {
+        width: 24px;
+        height: 24px;
+        border-radius: 4px;
+        background: #f5f5f5;
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+      }
+      // チェックボックス（クリック後）
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        height: 6px;
+        left: 6px;
+        width: 12px;
+        border-bottom: solid 2px #67b0c7;
+        border-left: solid 2px #67b0c7;
+        transform: translateY(-50%) rotate(-45deg);
+        opacity: 0;
+      }
+    }
+    // checked時に表示
+    &:checked + label {
+      &::before {
+        border: 1px solid map.get($color, main);
+      }
+      &::after {
+        opacity: 1;
+      }
+    }
+    &:hover,
+    &:focus {
+      & + label::before {
+        border: 1px solid map.get($color, main);
+      }
+    }
+  }
+}
+.contact-button {
+  margin-top: 24px;
+  // padding: 5px 22px;
+  @include mq(pc) {
+    margin-top: 40px;
+    // padding: 5px 38px;
+    // font-size: 16px;
+    // font-weight: 700;
+    // line-height: 160%;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    background-color: #ccc;
+    border-color: transparent;
+    box-shadow: 0px 4px 0px 0px transparent;
+  }
+}
+.contact__message-success,
+.contact__message-error {
+  text-align: center;
+  display: none;
+  background: #fff;
+  padding: contact 20px;
+  font-size: 24px;
+}
+.contact__message-success {
+  color: #00f;
+}
+.contact__message-error {
+  color: #f00;
+}

@@ -8,6 +8,14 @@ modalOpenButtons.forEach(function (modalOpenButton) {
   });
 });
 
+// buttonクリック以外でshowmodalを閉じれないので、画面更新でshowmodalを擬似的に閉じる
+jQuery(".js-modal__button--link").on("click", function (e) {
+  e.preventDefault(); // aタグの通常の処理を止める
+  var id = jQuery(this).attr("href"); // 遷移先のhrefを取得
+  window.open(id, "_blank"); // idに設定されたURLを別タブで開く
+  location.reload(); // 画面を更新する（＝modalを消す）
+});
+
 // 以下、close()を使う場合だが、非推奨のためコメントアウト
 // const modalDialog = document.querySelectorAll(".modalDialog");
 // const modalCloseButtons = document.querySelectorAll(".js-modal__btn--close");
