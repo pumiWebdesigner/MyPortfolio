@@ -33,20 +33,6 @@
     background-color: map.get($color, hov-btn);
     box-shadow: 0px 0px 0px 0px currentColor;
   }
-
-  // a {
-  //   display: inline-block;
-  //   width: 100%;
-  //   font-weight: bold; // reset.scssでfont-weight: normal;が設定されているため、上書きする。
-  // }
-  // @media (768px <= width) {
-  //   margin-top: 10px;
-  // }
-  // a,
-  // &button {
-  //   font-family: "Oswald", "Noto Sans JP", sans-serif;
-  //   font-weight: 700;
-  // }
 }
 .modal__button-modalopen {
   display: inline-block;
@@ -103,6 +89,12 @@
 }
 .dialog__text {
   flex: 0 0 48%;
+  dt {
+    margin-top: 10px;
+  }
+  dd {
+    margin-left: 1em;
+  }
 }
 .dialog__button {
   font-size: 16px;

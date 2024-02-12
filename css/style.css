@@ -897,6 +897,12 @@ a {
       -ms-flex: 0 0 48%;
           flex: 0 0 48%;
 }
+.dialog__text dt {
+  margin-top: 10px;
+}
+.dialog__text dd {
+  margin-left: 1em;
+}
 
 .dialog__button {
   font-size: 16px;
