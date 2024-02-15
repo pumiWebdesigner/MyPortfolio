@@ -13,33 +13,24 @@ $breakpoints: (
   // "pc": "(768px <= width)",
 ) !default;
 
-// mixinメディアクエリ（@use "sass:map";が必要）
-// @mixin mq($breakpoint: "sp") {
-//   @media #{map-get($breakpoints, $breakpoint)} {
-//     @content;
-//   }
-// }
 @mixin mq($breakpoint: "sp") {
   @media #{map.get($breakpoints, $breakpoint)} {
     @content;
   }
 }
 
-/*  scssへ記述  */
-
-//Figmaの時はこちら ===============
-
+//Figma用
 @mixin font($size: null, $weight: null, $height: null, $spacing: null) {
   @if $size {
-    font-size: calc($size / 16 * 1rem); // ①
+    font-size: calc($size / 16 * 1rem);
   }
   @if $weight {
-    font-weight: $weight; // ②
+    font-weight: $weight;
   }
   @if $height {
-    line-height: calc($height / $size); // ③
+    line-height: calc($height / $size);
   }
   @if $spacing {
-    letter-spacing: calc($spacing / $size * 1em); // ④
+    letter-spacing: calc($spacing / $size * 1em);
   }
 }
