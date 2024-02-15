@@ -1352,15 +1352,12 @@ input[type=checkbox] + span::after {
   }
 }
 
-.privacy-policy__head {
-  text-align: center;
-}
-
 .privacy-policy__title {
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.6;
   letter-spacing: 0em;
+  text-align: center;
 }
 
 .privacy-policy__content {
