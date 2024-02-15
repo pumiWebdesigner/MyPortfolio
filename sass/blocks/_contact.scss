@@ -16,6 +16,9 @@
 }
 .contact__inner {
   padding-inline: 20px;
+  @include mq(sp) {
+    padding-inline: 10px;
+  }
 }
 .contact__message {
   margin-top: 24px;
@@ -83,6 +86,10 @@
 .contact__field--radio-list {
   display: flex;
   gap: 15px;
+  flex-direction: column;
+  @include mq(pc) {
+    flex-direction: row;
+  }
 }
 
 // .contact-select-box {
