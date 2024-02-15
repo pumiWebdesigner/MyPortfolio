@@ -1326,6 +1326,11 @@ input[type=checkbox] + span::after {
   margin-left: 1em;
 }
 
+.privacy-policy__submit {
+  margin-top: 30px;
+  text-align: center;
+}
+
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
