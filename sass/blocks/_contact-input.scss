@@ -98,7 +98,7 @@ input[type="checkbox"] {
 }
 
 // ボタン枠のレイアウト
-input[type="checkbox"] {
+input[type="radio"] {
   & + span {
     &::before {
       // ラジオボタン枠のレイアウト
@@ -116,7 +116,7 @@ input[type="checkbox"] {
     }
   }
 }
-input[type="radio"] {
+input[type="checkbox"] {
   & + span {
     &::before {
       // チェックボックス枠のレイアウト

@@ -35,8 +35,8 @@
     <!-- css読み込み -->
     <link rel="stylesheet" href="./css/style.css" />
     <!-- JavaScript読み込み -->
-    <script src="./js/contact.js" defer></script>
-    <!-- <script src="./js/script.js" defer></script> -->
+    <script src="./js/dialog.js" defer></script>
+    <script src="./js/script.js" defer></script>
     <!-- 優先表示画像の事前読込 -->
     <link rel="preload" href="./img/img_fv.jpg" as="image" />
   </head>
@@ -46,7 +46,7 @@
       <header class="header">
         <div class="header__container">
           <h1 class="header__logo">
-            <a href="./index.html#">Pumi's<br />Portfolio</a>
+            <a href="#">Pumi's<br />Portfolio</a>
           </h1>
           <button id="js-drawer__btn" class="header__hamburger--button" aria-label="ハンバーガーメニュー">
             <span class="drawer-bar"></span>
@@ -57,7 +57,7 @@
             <ul class="header__nav-list">
               <!-- works -->
               <li class="header__nav-item">
-                <a href="./index.html#works" class="header__nav-link js-drawer__nav--link button">
+                <a href="#works" class="header__nav-link js-drawer__nav--link button">
                   <span class="button__icon">
                     <svg width="21" height="16" viewBox="0 0 21 16" fill="none">
                       <path
@@ -71,7 +71,7 @@
               </li>
               <!-- skills -->
               <li class="header__nav-item">
-                <a href="./index.html#skills" class="header__nav-link js-drawer__nav--link button">
+                <a href="#skills" class="header__nav-link js-drawer__nav--link button">
                   <span class="button__icon">
                     <svg width="21" height="16" viewBox="0 0 640 512">
                       <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -86,7 +86,7 @@
               </li>
               <!-- about -->
               <li class="header__nav-item">
-                <a href="./index.html#about" class="header__nav-link js-drawer__nav--link button">
+                <a href="#about" class="header__nav-link js-drawer__nav--link button">
                   <span class="button__icon">
                     <svg width="17" height="18" viewBox="0 0 17 18" fill="none">
                       <path
@@ -100,7 +100,7 @@
               </li>
               <!-- service -->
               <li class="header__nav-item">
-                <a href="./index.html#service" class="header__nav-link js-drawer__nav--link button">
+                <a href="#service" class="header__nav-link js-drawer__nav--link button">
                   <span class="button__icon">
                     <svg width="24" height="15" viewBox="0 0 24 15" fill="none">
                       <path
@@ -114,7 +114,7 @@
               </li>
               <!-- flow -->
               <li class="header__nav-item">
-                <a href="./index.html#flow" class="header__nav-link js-drawer__nav--link button">
+                <a href="#flow" class="header__nav-link js-drawer__nav--link button">
                   <span class="button__icon">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                       <path
@@ -165,128 +165,65 @@
       <main class="main">
         <!-- BackGround -->
         <div class="bg"></div>
-        <!-- contact -->
-        <section id="contact" class="contact">
-          <div class="contact__inner">
-            <h2 class="section__head section__head-center">
-              <span class="section__head-main">お問い合わせ</span>
-              <div class="button">
-                <span class="button__icon">
-                  <svg width="20" height="16" viewBox="0 0 20 16" fill="none">
-                    <path
-                      d="M2.5 2.28406C2.15625 2.28406 1.875 2.56339 1.875 2.90479V3.76217L8.61328 9.25563C9.42188 9.91515 10.582 9.91515 11.3906 9.25563L18.125 3.76217V2.90479C18.125 2.56339 17.8438 2.28406 17.5 2.28406H2.5ZM1.875 6.17138V12.8365C1.875 13.1779 2.15625 13.4572 2.5 13.4572H17.5C17.8438 13.4572 18.125 13.1779 18.125 12.8365V6.17138L12.5781 10.6949C11.0781 11.917 8.91797 11.917 7.42188 10.6949L1.875 6.17138ZM0 2.90479C0 1.53531 1.12109 0.421875 2.5 0.421875H17.5C18.8789 0.421875 20 1.53531 20 2.90479V12.8365C20 14.2059 18.8789 15.3194 17.5 15.3194H2.5C1.12109 15.3194 0 14.2059 0 12.8365V2.90479Z"
-                      class="button__icon-path button__icon-path-contact"
-                    />
-                  </svg>
-                </span>
-                <span class="button__text button__text-contact">Contact -</span>
-              </div>
-            </h2>
-            <span class="button__text">Contact -</span>
 
-            <form
-              id="js-form"
-              class="contact-form"
-              method="post"
-              action="
-              https://docs.google.com/forms/u/0/d/e/1FAIpQLSdJq9RtyK_ZOIa4ehi92lMGJouvBIXhEBzSsltfstKmzat1Jg/formResponse
-              "
-            >
-              <!-- /ここのコメントも送信時に消すので、formタグ内に記述 -->
-              <div class="contact__message">
-                ご相談やご質問など、お気軽にご連絡ください。
-                <br />以下のフォームに入力のうえ、ご送信ください。
-              </div>
-              <div class="contact__fields">
-                <div class="contact__field">
-                  <div class="contact__field__head">
-                    <label for="your-name" class="contact__field--label">お名前</label>
-                    <span class="contact__field--tag">必須</span>
-                  </div>
-                  <div class="contact__field--body">
-                    <input type="text" id="your-name" placeholder="山田太郎" name="entry.530212225" required />
-                  </div>
-                </div>
-
-                <div class="contact__field">
-                  <div class="contact__field__head">
-                    <label for="your-email" class="contact__field--label">メールアドレス</label>
-                    <span class="contact__field--tag">必須</span>
-                  </div>
-                  <div class="contact__field--body">
-                    <input type="email" id="your-email" placeholder="info@example.com" name="emailAddress" required />
-                  </div>
-                </div>
-                <!-- ↑labelのfor、inputのidを同値にし、labelクリック時にinputフォーカス -->
-                <!-- ↓labelの要素内にinputを配置することで、labelクリック時にinputフォーカス -->
-                <div class="contact__field">
-                  <div class="contact__field__head">
-                    <label class="contact__field--label">お問い合わせ種類</label>
-                    <span class="contact__field--tag">必須</span>
-                  </div>
-
-                  <div class="contact__field--body">
-                    <div class="contact__field--radio-list">
-                      <label class="contact__field--radio">
-                        <input type="radio" name="entry.716562788" value="ホームページ制作" required />
-                        <span class="contact-radio-label">ホームページ制作</span>
-                      </label>
-                      <label class="contact__field--radio">
-                        <input type="radio" name="entry.716562788" value="ホームページ修正" />
-                        <span class="contact-radio-label">ホームページ修正</span>
-                      </label>
-                      <label class="contact__field--radio">
-                        <input type="radio" name="entry.716562788" value="ホームページ相談" />
-                        <span class="contact-radio-label">ホームページ相談</span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- <select name="entry.00000000">
-                  <option value="-">選択してください</option>
-                  <option value="選択項目１">ホームページ制作</option>
-                  <option value="選択項目２">ホームページ修正</option>
-                  <option value="選択項目３">ホームページ相談</option>
-                </select> -->
-
-                <div class="contact__field">
-                  <div class="contact__field__head">
-                    <label for="your-message" class="contact__field--label">お問い合わせ内容</label>
-                    <span class="contact__field--tag">必須</span>
-                  </div>
-                  <div class="contact__field--body">
-                    <textarea id="your-message" placeholder="お問い合わせ内容をご入力ください。3営業日以内にご返信いたします。" name="entry.1269014493" required></textarea>
-                  </div>
-                </div>
-
-                <label class="contact__privacy">
-                  <input type="checkbox" name="entry.2114229630" value="プライバシーポリシーに合意する" required />
-                  <span>
-                    <a href="./policy.html" target="_blank" class="colorchange"> プライバシーポリシー </a>
-                    に合意する
-                  </span>
-                </label>
-                <button id="js-submit" class="contact-button util-btn--inline-block" type="submit">上記の内容を送信する</button>
-              </div>
-            </form>
-            <div id="js-success" class="contact__message--success">
-              <p>
-                送信完了しました。
-                <br />ありがとうございました。 <br />3営業日以内にご返信いたします。
-              </p>
-            </div>
-            <div id="js-error" class="contact__message--error">
-              <p>
-                送信に失敗しました。
-                <br />ページを更新して再度送信してください。
-              </p>
-            </div>
+        <!-- privacy-policy -->
+        <div class="privacy-policy">
+          <div class="privacy-policy__head">
+            <h2 class="privacy-policy__title">プライバシーポリシー</h2>
+            <div class="privacy-policy__content">本ポートフォリオサイト（以下 当サイト）では、個人情報の取り扱いについて下記の様に定めます。</div>
           </div>
-        </section>
+          <div class="privacy-policy__body">
+            <div class="privacy-policy__box">
+              <h2 class="privacy-policy__subTitle">1. 個人情報の取得</h2>
+              <p class="privacy-policy__text">当サイトでは、ユーザーの皆様の個人情報（氏名、住所、メールアドレス、電話番号などを個人で特定できる情報）を取得させていただく事があります。</p>
+            </div>
+            <div class="privacy-policy__box">
+              <h2 class="privacy-policy__subTitle">2. 個人情報の利用</h2>
+              <p class="privacy-policy__text">取得した個人情報は以下の目的で使用致します。</p>
+              <ul>
+                <li class="privacy-policy__detail">お客様からのお問い合わせに対する回答送付</li>
+                <li class="privacy-policy__detail">資料を送付する際などでの本人確認</li>
+                <li class="privacy-policy__detail">当サイトのサービスに関するご案内</li>
+                <li class="privacy-policy__detail">当サイトのサービスの変更、提供中止、終了等のご連絡</li>
+                <li class="privacy-policy__detail">市場分析およびマーケティング</li>
+                <li class="privacy-policy__detail">広告配信、表示および効果測定</li>
+                <li class="privacy-policy__detail">当サイトのサービス提供、維持、保護および改善の為に必要な場合</li>
+              </ul>
+            </div>
+            <div class="privacy-policy__box">
+              <h2 class="privacy-policy__subTitle">3. 個人情報の安全管理</h2>
+              <p class="privacy-policy__text">当サイトでは取得した個人情報について適切な管理に努めるとともに個人情報の漏洩、改ざん、不正な侵入の防止に努めます。</p>
+            </div>
+            <div class="privacy-policy__box">
+              <h2 class="privacy-policy__subTitle">4. 第3者への開示/提供の禁止</h2>
+              <p class="privacy-policy__text">当サイトではお客様よりお預かりした個人情報を適切に管理し、次のいずれかに該当する場合を除き、個人情報を第3者に開示致しません。</p>
+              <ul>
+                <li class="privacy-policy__detail">法律上、照会権限を有する者から書面による正式な協力要請、照会があった場合</li>
+                <li class="privacy-policy__detail">お客様の同意があった場合</li>
+                <li class="privacy-policy__detail">当サイトのサービスに関するご案内</li>
+                <li class="privacy-policy__detail">事業パートナーと共同利用する場合</li>
+                <p class="privacy-policy__text">※具体的な共同利用がある場合には別途ご連絡させて頂きます。</p>
+              </ul>
+            </div>
+            <div class="privacy-policy__box">
+              <h2 class="privacy-policy__subTitle">5. 個人情報に関するお問い合わせ</h2>
+              <p class="privacy-policy__text">個人情報に関するお問い合わせは以下までお願いします。</p>
+              <p class="privacy-policy__text">
+                <a href="mailto:pumi.Webdesigner@gmail.com">pumi.Webdesigner@gmail.com</a>
+              </p>
+            </div>
+            <div class="privacy-policy__box">
+              <h2 class="privacy-policy__subTitle">6. 改変と見直しについて</h2>
+              <p class="privacy-policy__text">個人情報について、法令変更など発生した際は随時見直しを行います。</p>
+            </div>
+            <!-- <div class="privacy-policy__submit">
+              <a href="contact.html"> <button class="button">戻る</button> </a>
+            </div> -->
+          </div>
+        </div>
 
         <!-- contact,twitter(X) -->
-        <div class="page-bottom">
+        <div class="page-bottom wow fadeInUp">
           <!-- contact -->
           <div id="contact" class="page-bottom__item page-bottom__item-contact">
             <h2 class="section__head section__head-center">
@@ -347,5 +284,9 @@
         </footer>
       </main>
     </div>
+
+    <script>
+      new WOW().init();
+    </script>
   </body>
 </html>
