@@ -2,7 +2,10 @@
 @use "../global" as *;
 
 .privacy-policy {
-  padding: 100px 40px;
+  padding: 100px 20px;
+  @include mq(pc) {
+    padding: 100px 40px;
+  }
   background: white;
 }
 

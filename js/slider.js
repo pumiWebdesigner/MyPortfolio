@@ -20,3 +20,12 @@ const swiper = new Swiper(".swiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+// モーダル表示時に別スライドが表示されてしまうと、ボタンがクリックできなくなるので、
+// モーダル表示時はスライドを止め、モーダルを閉じたらスライドを再開する
+jQuery(".js-modal__btn--open").on("click", function () {
+  swiper.autoplay.stop(); // モーダル表示時にスライドを止める
+});
+jQuery(".js-modal__btn--close").on("click", function (e) {
+  swiper.autoplay.start(); // モーダルを閉じたらスライドを再開する
+});

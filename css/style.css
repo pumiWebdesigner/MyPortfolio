@@ -940,6 +940,10 @@ a {
   }
 }
 
+.contact__button--top {
+  border: none;
+}
+
 .contact__message {
   margin-top: 24px;
   font-size: 12px;
@@ -1339,8 +1343,13 @@ input[type=checkbox] + span::after {
 }
 
 .privacy-policy {
-  padding: 100px 40px;
+  padding: 100px 20px;
   background: white;
+}
+@media ( 1024px <= width) {
+  .privacy-policy {
+    padding: 100px 40px;
+  }
 }
 
 .privacy-policy__head {

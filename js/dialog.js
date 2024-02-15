@@ -4,7 +4,8 @@ modalOpenButtons.forEach(function (modalOpenButton) {
   modalOpenButton.addEventListener("click", function () {
     // nextElementSibling:同じ階層の次の兄弟要素（HTMLで.js-modal-buttonの次要素にmodalを構成しておく）
     const dialog = this.nextElementSibling;
-    dialog.showModal();
+    dialog.showModal(); // javascriptで使用可能　jQueryで使うには一工夫必要
+    swiper.params;
   });
 });
 
