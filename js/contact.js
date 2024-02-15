@@ -29,26 +29,13 @@
     return false;
   });
 
-  const requires = jQuery(".is-required");
-  requires.forEach(function (require) {
-    require.on("change", function () {
-      // jQueryは直接chedkValidity()をrepuiredに対して使用できない
-      // 対象のDOM要素を取得（.get(0)や[0]を使用してから）checkValidityを行う
-      if (require.checkValidity()) {
-        submit.prop("disabled", false);
-      } else {
-        submit.prop("disabled", true);
-      }
-    });
+  form.on("change", function () {
+    // jQueryは直接chedkValidity()をformに対して使用できない
+    // 対象のDOM要素を取得（.get(0)や[0]を使用してから）checkValidityを行う
+    if (form.get(0).checkValidity()) {
+      submit.prop("disabled", false);
+    } else {
+      submit.prop("disabled", true);
+    }
   });
-  // form.on("change", function () {
-  // form.on("input", function () {
-  //   // jQueryは直接chedkValidity()をformに対して使用できない
-  //   // 対象のDOM要素を取得（.get(0)や[0]を使用してから）checkValidityを行う
-  //   if (form.get(0).checkValidity()) {
-  //     submit.prop("disabled", false);
-  //   } else {
-  //     submit.prop("disabled", true);
-  //   }
-  // });
 }

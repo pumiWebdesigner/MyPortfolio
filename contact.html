@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <!-- JavaScript読み込み -->
     <script src="./js/contact.js" defer></script>
-    <script src="./js/script.js" defer></script>
+    <!-- <script src="./js/script.js" defer></script> -->
     <!-- 優先表示画像の事前読込 -->
     <link rel="preload" href="./img/img_fv.jpg" as="image" />
   </head>
@@ -46,7 +46,7 @@
       <header class="header">
         <div class="header__container">
           <h1 class="header__logo">
-            <a href="#">Pumi's<br />Portfolio</a>
+            <a href="./index.html#">Pumi's<br />Portfolio</a>
           </h1>
           <button id="js-drawer__btn" class="header__hamburger--button" aria-label="ハンバーガーメニュー">
             <span class="drawer-bar"></span>
@@ -57,7 +57,7 @@
             <ul class="header__nav-list">
               <!-- works -->
               <li class="header__nav-item">
-                <a href="#works" class="header__nav-link js-drawer__nav--link button">
+                <a href="./index.html#works" class="header__nav-link js-drawer__nav--link button">
                   <span class="button__icon">
                     <svg width="21" height="16" viewBox="0 0 21 16" fill="none">
                       <path
@@ -71,7 +71,7 @@
               </li>
               <!-- skills -->
               <li class="header__nav-item">
-                <a href="#skills" class="header__nav-link js-drawer__nav--link button">
+                <a href="./index.html#skills" class="header__nav-link js-drawer__nav--link button">
                   <span class="button__icon">
                     <svg width="21" height="16" viewBox="0 0 640 512">
                       <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -86,7 +86,7 @@
               </li>
               <!-- about -->
               <li class="header__nav-item">
-                <a href="#about" class="header__nav-link js-drawer__nav--link button">
+                <a href="./index.html#about" class="header__nav-link js-drawer__nav--link button">
                   <span class="button__icon">
                     <svg width="17" height="18" viewBox="0 0 17 18" fill="none">
                       <path
@@ -100,7 +100,7 @@
               </li>
               <!-- service -->
               <li class="header__nav-item">
-                <a href="#service" class="header__nav-link js-drawer__nav--link button">
+                <a href="./index.html#service" class="header__nav-link js-drawer__nav--link button">
                   <span class="button__icon">
                     <svg width="24" height="15" viewBox="0 0 24 15" fill="none">
                       <path
@@ -114,7 +114,7 @@
               </li>
               <!-- flow -->
               <li class="header__nav-item">
-                <a href="#flow" class="header__nav-link js-drawer__nav--link button">
+                <a href="./index.html#flow" class="header__nav-link js-drawer__nav--link button">
                   <span class="button__icon">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                       <path
@@ -132,7 +132,7 @@
               </li>
               <!-- contact -->
               <li class="header__nav-item">
-                <a href="mailto:pumi.webdesigner@gmail.com" class="header__nav-link js-drawer__nav--link button button-contact">
+                <a href="./contact.html" class="header__nav-link js-drawer__nav--link button button-contact">
                   <span class="button__icon">
                     <svg width="20" height="16" viewBox="0 0 20 16" fill="none">
                       <path
@@ -165,12 +165,12 @@
       <main class="main">
         <!-- BackGround -->
         <div class="bg"></div>
+        <!-- contact -->
         <section id="contact" class="contact">
           <div class="contact__inner">
-            <!-- <div class="util_title"> -->
             <h2 class="section__head section__head-center">
               <span class="section__head-main">お問い合わせ</span>
-              <div class="header__nav-link js-drawer__nav--link button button-contact">
+              <div class="button">
                 <span class="button__icon">
                   <svg width="20" height="16" viewBox="0 0 20 16" fill="none">
                     <path
@@ -183,94 +183,104 @@
               </div>
             </h2>
             <span class="button__text">Contact -</span>
-            <!-- </div> -->
 
-            <div class="contact-content">
-              <form
-                id="js-form"
-                class="contact-form"
-                method="post"
-                action="
+            <form
+              id="js-form"
+              class="contact-form"
+              method="post"
+              action="
               https://docs.google.com/forms/u/0/d/e/1FAIpQLSdJq9RtyK_ZOIa4ehi92lMGJouvBIXhEBzSsltfstKmzat1Jg/formResponse
               "
-                novalidate
-              >
-                <div class="contact__attention">
-                  ご相談やご質問など、お気軽にご連絡ください。
-                  <br />以下のフォームに入力のうえ、ご送信ください。
+            >
+              <!-- /ここのコメントも送信時に消すので、formタグ内に記述 -->
+              <div class="contact__message">
+                ご相談やご質問など、お気軽にご連絡ください。
+                <br />以下のフォームに入力のうえ、ご送信ください。
+              </div>
+              <div class="contact__fields">
+                <div class="contact__field">
+                  <div class="contact__field__head">
+                    <label for="your-name" class="contact__field--label">お名前</label>
+                    <span class="contact__field--tag">必須</span>
+                  </div>
+                  <div class="contact__field--body">
+                    <input type="text" id="your-name" placeholder="山田太郎" name="entry.530212225" required />
+                  </div>
                 </div>
 
-                <dl class="contact-list">
-                  <div class="contact-item is-required">
-                    <dt class="contact-item-title">お名前<span class="contact-require-label">必須</span></dt>
-                    <dd class="contact-input-box">
-                      <input type="text" placeholder="山田太郎" name="entry.530212225" />
-                    </dd>
+                <div class="contact__field">
+                  <div class="contact__field__head">
+                    <label for="your-email" class="contact__field--label">メールアドレス</label>
+                    <span class="contact__field--tag">必須</span>
                   </div>
-
-                  <div class="contact-item is-required">
-                    <dt class="contact-item-title">メールアドレス<span class="contact-require-label">必須</span></dt>
-                    <dd class="contact-input-box">
-                      <input class="input-email" type="email" placeholder="info@example.com" name="emailAddress" />
-                    </dd>
+                  <div class="contact__field--body">
+                    <input type="email" id="your-email" placeholder="info@example.com" name="emailAddress" required />
                   </div>
-
-                  <!-- <div class="contact-item is-required">
-                    <dt class="contact-item-title">お問い合わせ内容（概要）<span class="contact-require-label">必須</span></dt>
-                    <dd class="contact-select-box">
-                      <select name="entry.1063864133">
-                        <option value="-">選択してください</option>
-                        <option value="選択項目１">ホームページ制作</option>
-                        <option value="選択項目２">ホームページ修正</option>
-                        <option value="選択項目３">ホームページ相談</option>
-                      </select>
-                    </dd>
-                  </div> -->
-
-                  <div class="contact-item contact-item-radio is-required">
-                    <dt class="contact-item-title">お問い合わせ内容（概要）<span class="contact-require-label">必須</span></dt>
-                    <dd class="contact-input-box contact-radio-box">
-                      <div class="contact-radio">
-                        <input id="Creation" type="radio" name="entry.716562788" value="ホームページ制作" checked />
-                        <label for="Creation" class="contact-radio-label">ホームページ制作</label>
-                      </div>
-                      <div class="contact-radio">
-                        <input id="Modification" type="radio" name="entry.716562788" value="ホームページ修正" />
-                        <label for="Modification" class="contact-radio-label">ホームページ修正</label>
-                      </div>
-                      <div class="contact-radio">
-                        <input id="Consultation" type="radio" name="entry.716562788" value="ホームページ相談" />
-                        <label for="Consultation" class="contact-radio-label">ホームページ相談</label>
-                      </div>
-                    </dd>
-                  </div>
-
-                  <div class="contact-item contact-item-message is-required">
-                    <dt class="contact-item-title">お問い合わせ内容（詳細）<span class="contact-require-label">必須</span></dt>
-                    <dd class="contact-input-box contact-message-box">
-                      <textarea placeholder="お問い合わせ内容をご入力ください。3営業日以内にご返信いたします。" name="entry.1269014493"></textarea>
-                    </dd>
-                  </div>
-                </dl>
-                <div class="contact-privacy is-required">
-                  <input id="form-privacy" class="contact-privacy-input" type="checkbox" name="entry.2114229630" value="プライバシーポリシーに合意する" />
-
-                  <label for="form-privacy" class="contact-privacy-label"> <a href="#" target="_blank" class="colorchange">プライバシーポリシー</a>に合意する </label>
                 </div>
+                <!-- ↑labelのfor、inputのidを同値にし、labelクリック時にinputフォーカス -->
+                <!-- ↓labelの要素内にinputを配置することで、labelクリック時にinputフォーカス -->
+                <div class="contact__field">
+                  <div class="contact__field__head">
+                    <label class="contact__field--label">お問い合わせ種類</label>
+                    <span class="contact__field--tag">必須</span>
+                  </div>
+
+                  <div class="contact__field--body">
+                    <div class="contact__field--radio-list">
+                      <label class="contact__field--radio">
+                        <input type="radio" name="entry.716562788" value="ホームページ制作" required />
+                        <span class="contact-radio-label">ホームページ制作</span>
+                      </label>
+                      <label class="contact__field--radio">
+                        <input type="radio" name="entry.716562788" value="ホームページ修正" />
+                        <span class="contact-radio-label">ホームページ修正</span>
+                      </label>
+                      <label class="contact__field--radio">
+                        <input type="radio" name="entry.716562788" value="ホームページ相談" />
+                        <span class="contact-radio-label">ホームページ相談</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- <select name="entry.00000000">
+                  <option value="-">選択してください</option>
+                  <option value="選択項目１">ホームページ制作</option>
+                  <option value="選択項目２">ホームページ修正</option>
+                  <option value="選択項目３">ホームページ相談</option>
+                </select> -->
+
+                <div class="contact__field">
+                  <div class="contact__field__head">
+                    <label for="your-message" class="contact__field--label">お問い合わせ内容</label>
+                    <span class="contact__field--tag">必須</span>
+                  </div>
+                  <div class="contact__field--body">
+                    <textarea id="your-message" placeholder="お問い合わせ内容をご入力ください。3営業日以内にご返信いたします。" name="entry.1269014493" required></textarea>
+                  </div>
+                </div>
+
+                <label class="contact__privacy">
+                  <input type="checkbox" name="entry.2114229630" value="プライバシーポリシーに合意する" required />
+                  <span>
+                    <a href="#" target="_blank" class="colorchange"> プライバシーポリシー </a>
+                    に合意する
+                  </span>
+                </label>
                 <button id="js-submit" class="contact-button util-btn--inline-block" type="submit">上記の内容を送信する</button>
-              </form>
-              <div id="js-success" class="contact__message-success">
-                <p>
-                  送信完了しました。
-                  <br />ありがとうございました。 <br />3営業日以内にご返信いたします。
-                </p>
               </div>
-              <div id="js-error" class="contact__message-error">
-                <p>
-                  送信に失敗しました。
-                  <br />ページを更新して再度送信してください。
-                </p>
-              </div>
+            </form>
+            <div id="js-success" class="contact__message--success">
+              <p>
+                送信完了しました。
+                <br />ありがとうございました。 <br />3営業日以内にご返信いたします。
+              </p>
+            </div>
+            <div id="js-error" class="contact__message--error">
+              <p>
+                送信に失敗しました。
+                <br />ページを更新して再度送信してください。
+              </p>
             </div>
           </div>
         </section>
@@ -283,7 +293,7 @@
               <span class="section__head-main">Contact -</span>
               <span class="section__head-sub">お問い合わせ</span>
             </h2>
-            <a href="mailto:pumi.webdesigner@gmail.com" target="_blank" class="page-bottom__button button button-border">
+            <a href="./contact.html" target="_blank" class="page-bottom__button button button-border">
               <span class="button__icon">
                 <svg width="20" height="16" viewBox="0 0 20 16" fill="none">
                   <path

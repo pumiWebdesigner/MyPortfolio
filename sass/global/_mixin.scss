@@ -19,3 +19,22 @@ $breakpoints: (
     @content;
   }
 }
+
+/*  scssへ記述  */
+
+//Figmaの時はこちら ===============
+
+@mixin font($size: null, $weight: null, $height: null, $spacing: null) {
+  @if $size {
+    font-size: calc($size / 16 * 1rem); // ①
+  }
+  @if $weight {
+    font-weight: $weight; // ②
+  }
+  @if $height {
+    line-height: calc($height / $size); // ③
+  }
+  @if $spacing {
+    letter-spacing: calc($spacing / $size * 1em); // ④
+  }
+}
