@@ -10,12 +10,12 @@
 }
 
 .privacy-policy__head {
-  text-align: center;
 }
 
 .privacy-policy__title {
   // size,weight,height,spacing
   @include font(32, 700, 51.2, 0);
+  text-align: center;
 }
 
 .privacy-policy__content {
