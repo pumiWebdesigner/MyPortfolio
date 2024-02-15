@@ -183,7 +183,6 @@
                 <span class="button__text button__text-contact">Contact -</span>
               </div>
             </h2>
-            <span class="button__text">Contact -</span>
 
             <form
               id="js-form"
@@ -261,13 +260,19 @@
                   </div>
                 </div>
 
-                <label class="contact__privacy">
-                  <input type="checkbox" name="entry.2114229630" value="プライバシーポリシーに合意する" required />
-                  <span>
-                    <a href="./policy.html" target="_blank" class="colorchange"> プライバシーポリシー </a>
-                    に合意する
-                  </span>
-                </label>
+                <div class="contact__field">
+                  <div class="contact__field__head contact__privacy">
+                    <!-- <label class="contact__privacy"> -->
+                    <input type="checkbox" name="entry.2114229630" value="プライバシーポリシーに合意する" required />
+                    <span>
+                      <a href="./policy.html" target="_blank" class="colorchange"> プライバシーポリシー </a>
+                      に合意する
+                    </span>
+                    <span class="contact__field--tag">必須</span>
+                    <!-- </label> -->
+                  </div>
+                </div>
+
                 <button id="js-submit" class="contact-button util-btn--inline-block" type="submit">上記の内容を送信する</button>
               </div>
             </form>

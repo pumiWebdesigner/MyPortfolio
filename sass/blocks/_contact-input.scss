@@ -59,7 +59,12 @@ input[type="checkbox"] {
     }
     // ボタンの場所
     padding-left: calc(24px + 8px);
+    @include mq(sp) {
+      padding-left: calc(16px + 6px);
+    }
     position: relative;
+    display: flex;
+    align-items: center;
     // ボタン枠
     &::before {
       // ボタン枠の配置場所
@@ -79,6 +84,9 @@ input[type="checkbox"] {
       top: 50%;
       transform: translateY(-50%);
       left: 6px;
+      @include mq(sp) {
+        left: 4px;
+      }
       opacity: 0; // 非チェック時はポチ丸が透明
       // チェック時マークは別途下に記載
     }
@@ -106,6 +114,10 @@ input[type="radio"] {
       height: 24px;
       background: #f5f5f5;
       border-radius: 50%;
+      @include mq(sp) {
+        width: 16px;
+        height: 16px;
+      }
     }
     // チェック時マーク（ポチ丸）
     &::after {
@@ -113,6 +125,10 @@ input[type="radio"] {
       height: 12px;
       border-radius: 50%;
       background: map.get($color, main);
+      @include mq(sp) {
+        width: 8px;
+        height: 8px;
+      }
     }
   }
 }
@@ -124,6 +140,10 @@ input[type="checkbox"] {
       height: 24px;
       background: #f5f5f5;
       border-radius: 4px;
+      @include mq(sp) {
+        width: 16px;
+        height: 16px;
+      }
     }
     // チェック時マーク（✓）
     &::after {
@@ -132,6 +152,10 @@ input[type="checkbox"] {
       border-bottom: solid 2px map.get($color, main);
       border-left: solid 2px map.get($color, main);
       transform: translateY(-70%) rotate(-45deg);
+      @include mq(sp) {
+        width: 8px;
+        height: 4px;
+      }
     }
   }
 }
